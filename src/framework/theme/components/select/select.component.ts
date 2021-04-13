@@ -932,7 +932,7 @@ export class NbSelectComponent implements OnChanges, AfterViewInit, AfterContent
       return;
     }
 
-    if (this.canSelectValue()) {
+    if (this.canSelectValue() && value != null) {
       this.setSelection(value);
       if (this.selectionModel.length) {
         this.queue = null;
