@@ -29,6 +29,7 @@ import { map, takeUntil, filter, take, tap } from 'rxjs/operators';
 
 import { NB_DOCUMENT } from '../../theme.options';
 import { NbDateService } from '../calendar-kit/services/date.service';
+import { NbCalendarRange } from '../calendar/calendar-range.component';
 
 
 /**
@@ -81,7 +82,7 @@ export interface NbPickerValidatorConfig<D> {
  * Datepicker is an control that can pick any values anyway.
  * It has to be bound to the datepicker directive through nbDatepicker input.
  * */
-export abstract class NbDatepicker<T> {
+export abstract class NbDatepicker<T, D = T> {
   /**
    * HTML input element date format.
    * */
@@ -103,7 +104,7 @@ export abstract class NbDatepicker<T> {
   /**
    * Returns validator configuration based on the input properties.
    * */
-  abstract getValidatorConfig(): NbPickerValidatorConfig<T>;
+  abstract getValidatorConfig(): NbPickerValidatorConfig<D>;
 
   abstract show();
 
@@ -394,8 +395,13 @@ export class NbDatepickerDirective<D> implements OnDestroy, ControlValueAccessor
   protected minValidator(): ValidationErrors | null {
     const config = this.picker.getValidatorConfig();
     const date = this.datepickerAdapter.parse(this.inputValue, this.picker.format);
-    return (!config.min || !date || this.dateService.compareDates(config.min, date) <= 0) ?
-      null : { nbDatepickerMin: { min: config.min, actual: date } };
+    if ((date as any).start) {
+      return (!config.min || !date || this.dateService.compareDates(config.min, (date as any).start) <= 0) ?
+        null : { nbDatepickerMin: { min: config.min, actual: date } };
+    } else {
+      return (!config.min || !date || this.dateService.compareDates(config.min, date) <= 0) ?
+        null : { nbDatepickerMin: { min: config.min, actual: date } };
+    }
   }
 
   /**
@@ -404,8 +410,13 @@ export class NbDatepickerDirective<D> implements OnDestroy, ControlValueAccessor
   protected maxValidator(): ValidationErrors | null {
     const config = this.picker.getValidatorConfig();
     const date = this.datepickerAdapter.parse(this.inputValue, this.picker.format);
-    return (!config.max || !date || this.dateService.compareDates(config.max, date) >= 0) ?
-      null : { nbDatepickerMax: { max: config.max, actual: date } };
+    if ((date as any).start && (date as any).end) {
+      return (!config.max || !date || this.dateService.compareDates(config.max, (date as any).end) >= 0) ?
+        null : { nbDatepickerMax: { max: config.max, actual: date } };
+    } else {
+      return (!config.max || !date || this.dateService.compareDates(config.max, date) >= 0) ?
+        null : { nbDatepickerMax: { max: config.max, actual: date } };
+    }
   }
 
   /**
