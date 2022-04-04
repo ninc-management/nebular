@@ -8,6 +8,7 @@ import { ControlValueAccessor } from '@angular/forms';
 import { NbStatusService } from '../../services/status.service';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 /**
  * Styled checkbox component
  *
@@ -287,4 +288,6 @@ export declare class NbCheckboxComponent implements AfterViewInit, ControlValueA
     setDisabledState(val: boolean): void;
     setTouched(): void;
     updateValueAndIndeterminate(event: Event): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCheckboxComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCheckboxComponent, "nb-checkbox", never, { "checked": "checked"; "disabled": "disabled"; "status": "status"; "indeterminate": "indeterminate"; }, { "checkedChange": "checkedChange"; }, never, ["*"]>;
 }

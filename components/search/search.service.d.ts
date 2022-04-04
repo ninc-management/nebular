@@ -1,9 +1,5 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { Observable } from 'rxjs';
+import * as i0 from "@angular/core";
 /**
  * Search component service, connects your code to a page-level search component.
  */
@@ -68,4 +64,6 @@ export declare class NbSearchService {
         term: string;
         tag?: string;
     }>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSearchService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbSearchService>;
 }

@@ -1,13 +1,9 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { NbBooleanInput } from '../helpers';
 import { NbComponentSize } from '../component-size';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbBadgePosition } from '../badge/badge.component';
 import { NbIconConfig } from '../icon/icon.component';
+import * as i0 from "@angular/core";
 /**
  * Action item, display a link with an icon, or any other content provided instead.
  */
@@ -67,6 +63,8 @@ export declare class NbActionComponent {
      * @type string
      */
     badgePosition: NbBadgePosition;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbActionComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbActionComponent, "nb-action", never, { "link": "link"; "href": "href"; "title": "title"; "icon": "icon"; "disabled": "disabled"; "badgeDot": "badgeDot"; "badgeText": "badgeText"; "badgeStatus": "badgeStatus"; "badgePosition": "badgePosition"; }, {}, never, ["*"]>;
 }
 /**
  * Shows a horizontal list of actions, available in multiple sizes.
@@ -162,4 +160,6 @@ export declare class NbActionsComponent {
     get medium(): boolean;
     get large(): boolean;
     get giant(): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbActionsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbActionsComponent, "nb-actions", never, { "size": "size"; "fullWidth": "fullWidth"; }, {}, never, ["nb-action"]>;
 }

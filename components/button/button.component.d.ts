@@ -7,6 +7,7 @@ import { AfterViewInit, ChangeDetectorRef, ElementRef, Renderer2, NgZone } from 
 import { NbStatusService } from '../../services/status.service';
 import { NbBooleanInput } from '../helpers';
 import { NbButton } from './base-button';
+import * as i0 from "@angular/core";
 /**
  * Basic button component.
  *
@@ -542,4 +543,6 @@ export declare class NbButtonComponent extends NbButton implements AfterViewInit
      */
     onClick(event: any): void;
     constructor(renderer: Renderer2, hostElement: ElementRef<HTMLElement>, cd: ChangeDetectorRef, zone: NgZone, statusService: NbStatusService);
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbButtonComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbButtonComponent, "button[nbButton],a[nbButton],input[type=\"button\"][nbButton],input[type=\"submit\"][nbButton]", never, { "hero": "hero"; }, {}, never, ["*"]>;
 }

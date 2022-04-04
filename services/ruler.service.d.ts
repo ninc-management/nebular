@@ -1,4 +1,5 @@
 import { Observable, Subject } from 'rxjs';
+import * as i0 from "@angular/core";
 /**
  * Layout dimensions type
  */
@@ -42,4 +43,6 @@ export declare class NbLayoutRulerService {
      * @returns {Subject<any>}
      */
     onGetDimensions(): Subject<any>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbLayoutRulerService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbLayoutRulerService>;
 }

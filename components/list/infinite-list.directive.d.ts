@@ -3,7 +3,8 @@ import { NbBooleanInput } from '../helpers';
 import { NbLayoutScrollService } from '../../services/scroll.service';
 import { NbLayoutRulerService } from '../../services/ruler.service';
 import { NbListItemComponent } from './list.component';
-export declare class NbScrollableContainerDimentions {
+import * as i0 from "@angular/core";
+export declare class NbScrollableContainerDimensions {
     scrollTop: number;
     scrollHeight: number;
     clientHeight: number;
@@ -44,11 +45,22 @@ export declare class NbInfiniteListDirective implements AfterViewInit, OnDestroy
     private lastScrollPosition;
     windowScroll: boolean;
     private get elementScroll();
+    private elementScroll$;
+    private windowScroll$;
+    private bottomThreshold$;
+    private topThreshold$;
+    private throttleTime$;
     /**
      * Threshold after which event load more event will be emited.
      * In pixels.
      */
     threshold: number;
+    /**
+     * Prevent subsequent bottom/topThreshold emissions for specified duration after emitting once.
+     * In milliseconds.
+     */
+    set throttleTime(value: number);
+    get throttleTime(): number;
     /**
      * By default component observes list scroll position.
      * If set to `true`, component will observe position of page scroll instead.
@@ -68,7 +80,9 @@ export declare class NbInfiniteListDirective implements AfterViewInit, OnDestroy
     constructor(elementRef: ElementRef, scrollService: NbLayoutScrollService, dimensionsService: NbLayoutRulerService);
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
-    checkPosition({ scrollHeight, scrollTop, clientHeight }: NbScrollableContainerDimentions): void;
+    checkPosition({ scrollHeight, scrollTop, clientHeight }: NbScrollableContainerDimensions): void;
     private getContainerDimensions;
     private inSyncWithDom;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbInfiniteListDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbInfiniteListDirective, "[nbInfiniteList]", never, { "threshold": "threshold"; "throttleTime": "throttleTime"; "listenWindowScroll": "listenWindowScroll"; }, { "bottomThreshold": "bottomThreshold"; "topThreshold": "topThreshold"; }, ["listItems"]>;
 }

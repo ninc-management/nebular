@@ -1,5 +1,6 @@
 import { NgZone } from '@angular/core';
 import { FocusTrap, FocusTrapFactory, InteractivityChecker } from '@angular/cdk/a11y';
+import * as i0 from "@angular/core";
 /**
  * Overrides angular cdk focus trap to keep restore functionality inside trap.
  * */
@@ -20,4 +21,6 @@ export declare class NbFocusTrapFactoryService extends FocusTrapFactory {
     private document;
     constructor(checker: InteractivityChecker, ngZone: NgZone, document: any);
     create(element: HTMLElement, deferCaptureElements?: boolean): NbFocusTrap;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbFocusTrapFactoryService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbFocusTrapFactoryService>;
 }

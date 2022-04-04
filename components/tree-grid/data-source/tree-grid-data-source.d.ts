@@ -7,6 +7,7 @@ import { NbTreeGridFilterService } from './tree-grid-filter.service';
 import { NbTreeGridSortService } from './tree-grid-sort.service';
 import { NbGetters, NbTreeGridPresentationNode } from './tree-grid.model';
 import { NbToggleOptions, NbTreeGridService } from './tree-grid.service';
+import * as i0 from "@angular/core";
 export interface NbFilterable {
     filter(filterRequest: string): any;
 }
@@ -43,4 +44,6 @@ export declare class NbTreeGridDataSourceBuilder<T> {
     private treeGridDataService;
     constructor(filterService: NbTreeGridFilterService<T>, sortService: NbTreeGridSortService<T>, treeGridService: NbTreeGridService<T>, treeGridDataService: NbTreeGridDataService<T>);
     create<N>(data: N[], customGetters?: NbGetters<N, T>): NbTreeGridDataSource<T>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTreeGridDataSourceBuilder<any>, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbTreeGridDataSourceBuilder<any>>;
 }

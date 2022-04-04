@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 import { NbMenuInternalService, NbMenuItem, NbMenuService, NbMenuBadgeConfig } from './menu.service';
 import { NbBooleanInput } from '../helpers';
 import { NbLayoutDirectionService } from '../../services/direction.service';
+import * as i0 from "@angular/core";
 export declare enum NbToggleStates {
     Expanded = "expanded",
     Collapsed = "collapsed"
@@ -33,6 +34,8 @@ export declare class NbMenuItemComponent implements DoCheck, AfterViewInit, OnDe
     onSelectItem(item: NbMenuItem): void;
     onItemClick(item: NbMenuItem): void;
     getExpandStateIcon(): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbMenuItemComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbMenuItemComponent, "[nbMenuItem]", never, { "menuItem": "menuItem"; "badge": "badge"; }, { "hoverItem": "hoverItem"; "toggleSubMenu": "toggleSubMenu"; "selectItem": "selectItem"; "itemClick": "itemClick"; }, never, never>;
 }
 /**
  * Vertical menu component.
@@ -181,4 +184,6 @@ export declare class NbMenuComponent implements OnInit, AfterViewInit, OnDestroy
     protected getHomeItem(items: NbMenuItem[]): NbMenuItem;
     protected compareTag(tag: string): boolean;
     protected getSelectedItem(items: NbMenuItem[]): NbMenuItem;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbMenuComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbMenuComponent, "nb-menu", never, { "tag": "tag"; "items": "items"; "autoCollapse": "autoCollapse"; }, {}, never, never>;
 }

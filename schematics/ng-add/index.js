@@ -5,13 +5,13 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var tasks_1 = require("@angular-devkit/schematics/tasks");
+const tasks_1 = require("@angular-devkit/schematics/tasks");
 /**
  * This utils has to imported directly from the `/util/package`, not from the `/util/`.
  * Other utilities use `@angular/sdk/schematics` and `@schematics/angular` packages.
  * But these packages are not installed in this step.
  * */
-var package_1 = require("../util/package");
+const package_1 = require("../util/package");
 /**
  * ng-add schematics, installs peer dependencies and runs project setup schematics.
  * */
@@ -23,15 +23,15 @@ exports.default = default_1;
  * Add required peer dependencies in package.json
  * */
 function installMainPeerDependencies(tree) {
-    var angularCoreVersion = package_1.getDependencyVersionFromPackageJson(tree, '@angular/core');
-    var angularCliVersion = package_1.getDevDependencyVersionFromPackageJson(tree, '@angular/cli');
-    var nebularThemeVersion = package_1.getNebularVersion();
-    var angularCdkVersion = package_1.getNebularPeerDependencyVersionFromPackageJson('@angular/cdk');
-    package_1.addDependencyToPackageJson(tree, '@angular/animations', angularCoreVersion);
-    package_1.addDependencyToPackageJson(tree, '@angular/cdk', angularCdkVersion, true);
-    package_1.addDependencyToPackageJson(tree, '@nebular/theme', nebularThemeVersion);
-    package_1.addDependencyToPackageJson(tree, '@nebular/eva-icons', nebularThemeVersion);
-    package_1.addDevDependencyToPackageJson(tree, '@schematics/angular', angularCliVersion);
+    const angularCoreVersion = (0, package_1.getDependencyVersionFromPackageJson)(tree, '@angular/core');
+    const angularCliVersion = (0, package_1.getDevDependencyVersionFromPackageJson)(tree, '@angular/cli');
+    const nebularThemeVersion = (0, package_1.getNebularVersion)();
+    const angularCdkVersion = (0, package_1.getNebularPeerDependencyVersionFromPackageJson)('@angular/cdk');
+    (0, package_1.addDependencyToPackageJson)(tree, '@angular/animations', angularCoreVersion);
+    (0, package_1.addDependencyToPackageJson)(tree, '@angular/cdk', angularCdkVersion, true);
+    (0, package_1.addDependencyToPackageJson)(tree, '@nebular/theme', nebularThemeVersion);
+    (0, package_1.addDependencyToPackageJson)(tree, '@nebular/eva-icons', nebularThemeVersion);
+    (0, package_1.addDevDependencyToPackageJson)(tree, '@schematics/angular', angularCliVersion);
 }
 /**
  * Runs `npm install`, then `post-install` schematic and after complete runs `setup` schematics.
@@ -43,10 +43,10 @@ function installMainPeerDependencies(tree) {
  * is to use context tasks and add `npm install` task as the dependency to `setup` schematics task.
  * */
 function runSetupSchematics(options) {
-    return function (tree, context) {
+    return (tree, context) => {
         installMainPeerDependencies(tree);
-        var installTaskId = context.addTask(new tasks_1.NodePackageInstallTask());
-        var postInstallTaskId = context.addTask(new tasks_1.RunSchematicTask('post-install', options), [installTaskId]);
+        const installTaskId = context.addTask(new tasks_1.NodePackageInstallTask());
+        const postInstallTaskId = context.addTask(new tasks_1.RunSchematicTask('post-install', options), [installTaskId]);
         context.addTask(new tasks_1.RunSchematicTask('setup', options), [postInstallTaskId]);
     };
 }

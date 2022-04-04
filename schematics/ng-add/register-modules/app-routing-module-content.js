@@ -6,4 +6,15 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.appRoutingModuleContent = void 0;
-exports.appRoutingModuleContent = "import { NgModule } from '@angular/core';\n\nimport { Routes, RouterModule } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule { }\n";
+exports.appRoutingModuleContent = `import { NgModule } from '@angular/core';
+
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule { }
+`;

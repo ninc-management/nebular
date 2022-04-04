@@ -1,5 +1,6 @@
 import { NbComponentSize } from '../component-size';
 import { NbPosition } from '../cdk/overlay/overlay-position';
+import * as i0 from "@angular/core";
 /**
  * The `NbOptionListComponent` is container component for `NbOptionGroupComponent` and`NbOptionComponent` list.
  *
@@ -26,4 +27,6 @@ export declare class NbOptionListComponent<T> {
     get sizeMedium(): boolean;
     get sizeLarge(): boolean;
     get sizeGiant(): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbOptionListComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbOptionListComponent<any>, "nb-option-list", never, { "size": "size"; "position": "position"; }, {}, never, ["*"]>;
 }

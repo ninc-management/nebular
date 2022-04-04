@@ -14,6 +14,7 @@ import { NbActiveDescendantKeyManager, NbActiveDescendantKeyManagerFactoryServic
 import { NbScrollStrategies } from '../cdk/adapter/block-scroll-strategy-adapter';
 import { NbOptionComponent } from '../option/option.component';
 import { NbAutocompleteComponent } from './autocomplete.component';
+import * as i0 from "@angular/core";
 /**
  * The `NbAutocompleteDirective` provides a capability to expand input with
  * `NbAutocompleteComponent` overlay containing options to select and fill input with.
@@ -92,12 +93,6 @@ export declare class NbAutocompleteDirective<T> implements OnDestroy, AfterViewI
      **/
     overlayOffset: number;
     /**
-     * Determines if the input will be focused when the control value is changed
-     * */
-    get focusInputOnValueChange(): boolean;
-    set focusInputOnValueChange(value: boolean);
-    protected _focusInputOnValueChange: boolean;
-    /**
      * Determines options overlay scroll strategy.
      **/
     scrollStrategy: NbScrollStrategies;
@@ -128,7 +123,7 @@ export declare class NbAutocompleteDirective<T> implements OnDestroy, AfterViewI
     protected setupAutocomplete(): void;
     protected getDisplayValue(value: string): string;
     protected getContainer(): ComponentRef<any>;
-    protected handleInputValueUpdate(value: T): void;
+    protected handleInputValueUpdate(value: T, focusInput?: boolean): void;
     protected subscribeOnTriggers(): void;
     protected createTriggerStrategy(): NbTriggerStrategy;
     protected createKeyManager(): void;
@@ -141,4 +136,7 @@ export declare class NbAutocompleteDirective<T> implements OnDestroy, AfterViewI
     protected initOverlay(): void;
     protected checkOverlayVisibility(): void;
     protected createScrollStrategy(): NbScrollStrategy;
+    protected shouldShow(): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbAutocompleteDirective<any>, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbAutocompleteDirective<any>, "input[nbAutocomplete], textarea[nbAutocomplete]", never, { "autocomplete": "nbAutocomplete"; "overlayOffset": "overlayOffset"; "scrollStrategy": "scrollStrategy"; "customOverlayHost": "customOverlayHost"; }, {}, never>;
 }

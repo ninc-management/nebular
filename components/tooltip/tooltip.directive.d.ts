@@ -8,6 +8,7 @@ import { NbDynamicOverlayHandler } from '../cdk/overlay/dynamic/dynamic-overlay-
 import { NbOverlayConfig } from '../cdk/overlay/mapping';
 import { NbTooltipComponent } from './tooltip.component';
 import { NbIconConfig } from '../icon/icon.component';
+import * as i0 from "@angular/core";
 /**
  *
  * Tooltip directive for small text/icon hints.
@@ -96,6 +97,8 @@ export declare class NbTooltipDirective implements OnInit, OnChanges, AfterViewI
      * Determines tooltip overlay offset (in pixels).
      **/
     offset: number;
+    /** Disables the display of the tooltip. */
+    disabled: boolean;
     nbTooltipShowStateChange: EventEmitter<{
         isShown: boolean;
     }>;
@@ -111,4 +114,6 @@ export declare class NbTooltipDirective implements OnInit, OnChanges, AfterViewI
     toggle(): void;
     ngOnDestroy(): void;
     protected configureDynamicOverlay(): NbDynamicOverlayHandler;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTooltipDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbTooltipDirective, "[nbTooltip]", ["nbTooltip"], { "content": "nbTooltip"; "position": "nbTooltipPlacement"; "adjustment": "nbTooltipAdjustment"; "tooltipClass": "nbTooltipClass"; "icon": "nbTooltipIcon"; "status": "nbTooltipStatus"; "trigger": "nbTooltipTrigger"; "offset": "nbTooltipOffset"; "disabled": "nbTooltipDisabled"; }, { "nbTooltipShowStateChange": "nbTooltipShowStateChange"; }, never>;
 }

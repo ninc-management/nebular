@@ -7,6 +7,7 @@ import { ComponentFactoryResolver, ComponentFactory, ComponentRef, ElementRef, O
 import { NbComponentSize } from '../component-size';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbSpinnerComponent } from './spinner.component';
+import * as i0 from "@angular/core";
 /**
  * Styled spinner directive
  *
@@ -80,4 +81,6 @@ export declare class NbSpinnerDirective implements OnInit {
     hide(): void;
     show(): void;
     setInstanceInputs(instance: NbSpinnerComponent): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSpinnerDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbSpinnerDirective, "[nbSpinner]", never, { "spinnerMessage": "nbSpinnerMessage"; "spinnerStatus": "nbSpinnerStatus"; "spinnerSize": "nbSpinnerSize"; "nbSpinner": "nbSpinner"; }, {}, never>;
 }

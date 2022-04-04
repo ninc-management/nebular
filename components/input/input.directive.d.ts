@@ -12,6 +12,7 @@ import { NbComponentShape } from '../component-shape';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbFormFieldControl } from '../form-field/form-field-control';
 import { NbFocusMonitor } from '../cdk/a11y/a11y.module';
+import * as i0 from "@angular/core";
 /**
  * Basic input directive.
  *
@@ -253,4 +254,6 @@ export declare class NbInputDirective implements DoCheck, OnChanges, OnInit, Aft
     focused$: BehaviorSubject<boolean>;
     disabled$: BehaviorSubject<boolean>;
     fullWidth$: BehaviorSubject<boolean>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbInputDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbInputDirective, "input[nbInput],textarea[nbInput]", never, { "fieldSize": "fieldSize"; "status": "status"; "shape": "shape"; "fullWidth": "fullWidth"; }, {}, never>;
 }

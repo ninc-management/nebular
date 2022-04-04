@@ -1,7 +1,7 @@
-import { ComponentFactoryResolver, ComponentRef, OnChanges, ElementRef, EventEmitter, OnDestroy, Type, AfterViewInit, OnInit, SimpleChanges } from '@angular/core';
+import { ComponentFactoryResolver, ComponentRef, OnChanges, ElementRef, EventEmitter, OnDestroy, Type, OnInit, SimpleChanges } from '@angular/core';
 import { Observable, ReplaySubject, Subject } from 'rxjs';
 import { NbOverlayRef } from '../cdk/overlay/mapping';
-import { NbAdjustableConnectedPositionStrategy, NbPositionBuilderService } from '../cdk/overlay/overlay-position';
+import { NbAdjustableConnectedPositionStrategy, NbAdjustment, NbAdjustmentValues, NbPositionBuilderService } from '../cdk/overlay/overlay-position';
 import { NbOverlayService } from '../cdk/overlay/overlay-service';
 import { NbTriggerStrategy, NbTriggerStrategyBuilderService } from '../cdk/overlay/overlay-trigger';
 import { NbDatepickerContainerComponent } from './datepicker-container.component';
@@ -11,6 +11,7 @@ import { NbCalendarCell, NbCalendarSize, NbCalendarViewMode, NbCalendarSizeValue
 import { NbDateService } from '../calendar-kit/services/date.service';
 import { NbDatepicker, NbPickerValidatorConfig } from './datepicker.directive';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 /**
  * The `NbBasePicker` component concentrates overlay manipulation logic.
  * */
@@ -122,6 +123,7 @@ export declare abstract class NbBasePicker<D, T, P> extends NbDatepicker<T, D> {
      * */
     protected pickerRef: ComponentRef<any>;
     protected overlayOffset: number;
+    protected adjustment: NbAdjustment;
     protected destroy$: Subject<void>;
     /**
      * Queue contains the last value that was applied to the picker when it was hidden.
@@ -169,7 +171,7 @@ export declare abstract class NbBasePicker<D, T, P> extends NbDatepicker<T, D> {
     protected patchWithInputs(): void;
     protected checkFormat(): void;
 }
-export declare class NbBasePickerComponent<D, T, P> extends NbBasePicker<D, T, P> implements OnInit, OnChanges, AfterViewInit, OnDestroy {
+export declare class NbBasePickerComponent<D, T, P> extends NbBasePicker<D, T, P> implements OnInit, OnChanges, OnDestroy {
     /**
      * Datepicker date format. Can be used only with date adapters (moment, date-fns) since native date
      * object doesn't support formatting.
@@ -245,16 +247,19 @@ export declare class NbBasePickerComponent<D, T, P> extends NbBasePicker<D, T, P
      * Determines picker overlay offset (in pixels).
      * */
     overlayOffset: number;
+    adjustment: NbAdjustment;
+    static ngAcceptInputType_adjustment: NbAdjustmentValues;
     constructor(document: any, positionBuilder: NbPositionBuilderService, triggerStrategyBuilder: NbTriggerStrategyBuilderService, overlay: NbOverlayService, cfr: ComponentFactoryResolver, dateService: NbDateService<D>, dateServiceOptions: any);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
-    ngAfterViewInit(): void;
     ngOnDestroy(): void;
     protected pickerClass: Type<P>;
     protected get pickerValueChange(): Observable<T>;
     get value(): T;
     set value(value: T);
     protected writeQueue(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbBasePickerComponent<any, any, any>, [null, null, null, null, null, null, { optional: true; }]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbBasePickerComponent<any, any, any>, "ng-component", never, { "format": "format"; "boundingMonth": "boundingMonth"; "startView": "startView"; "min": "min"; "max": "max"; "filter": "filter"; "dayCellComponent": "dayCellComponent"; "monthCellComponent": "monthCellComponent"; "yearCellComponent": "yearCellComponent"; "size": "size"; "visibleDate": "visibleDate"; "hideOnSelect": "hideOnSelect"; "showNavigation": "showNavigation"; "weekNumberSymbol": "weekNumberSymbol"; "showWeekNumber": "showWeekNumber"; "overlayOffset": "overlayOffset"; "adjustment": "adjustment"; }, {}, never, never>;
 }
 /**
  * The DatePicker components itself.
@@ -274,6 +279,8 @@ export declare class NbDatepickerComponent<D> extends NbBasePickerComponent<D, D
     set value(date: D);
     protected get pickerValueChange(): Observable<D>;
     protected writeQueue(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbDatepickerComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbDatepickerComponent<any>, "nb-datepicker", never, { "date": "date"; }, { "dateChange": "dateChange"; }, never, never>;
 }
 /**
  * The RangeDatePicker components itself.
@@ -294,4 +301,6 @@ export declare class NbRangepickerComponent<D> extends NbBasePickerComponent<D, 
     protected get pickerValueChange(): Observable<NbCalendarRange<D>>;
     shouldHide(): boolean;
     protected writeQueue(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbRangepickerComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbRangepickerComponent<any>, "nb-rangepicker", never, { "range": "range"; }, { "rangeChange": "rangeChange"; }, never, never>;
 }

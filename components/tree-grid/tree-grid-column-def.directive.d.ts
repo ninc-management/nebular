@@ -1,5 +1,6 @@
 import { OnChanges } from '@angular/core';
 import { NbColumnDefDirective } from '../cdk/table/cell';
+import * as i0 from "@angular/core";
 /**
  * Column definition for the tree-grid.
  * Defines a set of cells available for a table column.
@@ -27,4 +28,6 @@ export declare class NbTreeGridColumnDefDirective extends NbColumnDefDirective i
     ngOnChanges(): void;
     shouldHide(width: number): boolean;
     shouldShow(width: number): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTreeGridColumnDefDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbTreeGridColumnDefDirective, "[nbTreeGridColumnDef]", never, { "name": "nbTreeGridColumnDef"; "hideOn": "hideOn"; "showOn": "showOn"; }, {}, never>;
 }

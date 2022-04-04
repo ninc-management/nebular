@@ -1,3 +1,4 @@
+import * as i0 from "@angular/core";
 /**
  * Service to control the global page spinner.
  */
@@ -24,4 +25,6 @@ export declare class NbSpinnerService {
     private showSpinner;
     private hideSpinner;
     private getSpinnerElement;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSpinnerService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbSpinnerService>;
 }

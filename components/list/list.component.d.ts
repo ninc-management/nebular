@@ -1,3 +1,4 @@
+import * as i0 from "@angular/core";
 /**
  * List is a container component that wraps `nb-list-item` component.
  *
@@ -42,6 +43,8 @@ export declare class NbListComponent {
      * @type {string}
      */
     role: string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbListComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbListComponent, "nb-list", never, { "role": "role"; }, {}, never, ["nb-list-item"]>;
 }
 /**
  * List item component is a grouping component that accepts arbitrary content.
@@ -54,4 +57,6 @@ export declare class NbListItemComponent {
      * @type {string}
      */
     role: string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbListItemComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbListItemComponent, "nb-list-item", never, { "role": "role"; }, {}, never, ["*"]>;
 }

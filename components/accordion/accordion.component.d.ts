@@ -1,10 +1,6 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { Subject } from 'rxjs';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 /**
  * An accordion allows to toggle the display of sections of content
  *
@@ -80,4 +76,6 @@ export declare class NbAccordionComponent {
      * Closes all enabled accordion items.
      */
     closeAll(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbAccordionComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbAccordionComponent, "nb-accordion", never, { "multi": "multi"; }, {}, never, ["nb-accordion-item"]>;
 }

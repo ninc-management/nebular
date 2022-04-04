@@ -2,6 +2,7 @@ import { AfterContentInit, OnDestroy, QueryList } from '@angular/core';
 import { Subject } from 'rxjs';
 import { NbBooleanInput } from '../helpers';
 import { NbOptionComponent } from './option.component';
+import * as i0 from "@angular/core";
 /**
  * NbOptionGroupComponent
  *
@@ -35,4 +36,6 @@ export declare class NbOptionGroupComponent implements AfterContentInit, OnDestr
      * Use this method when updating options during change detection run (e.g. QueryList.changes, lifecycle hooks).
      */
     protected asyncUpdateOptionsDisabledState(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbOptionGroupComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbOptionGroupComponent, "nb-option-group", never, { "title": "title"; "disabled": "disabled"; }, {}, ["options"], ["nb-option, ng-container"]>;
 }

@@ -4,6 +4,7 @@ import { NbComponentType } from '../cdk/overlay/mapping';
 import { NbOverlayContainerComponent } from '../cdk/overlay/overlay-container';
 import { NbWindowConfig } from './window.options';
 import { NbWindowRef } from './window-ref';
+import * as i0 from "@angular/core";
 export declare class NbWindowComponent implements OnInit, AfterViewChecked, OnDestroy {
     content: TemplateRef<any> | NbComponentType;
     context: Object;
@@ -19,6 +20,7 @@ export declare class NbWindowComponent implements OnInit, AfterViewChecked, OnDe
     get showMinimize(): boolean;
     get showMaximize(): boolean;
     get showFullScreen(): boolean;
+    get showClose(): boolean;
     overlayContainer: NbOverlayContainerComponent;
     protected focusTrap: NbFocusTrap;
     constructor(content: TemplateRef<any> | NbComponentType, context: Object, windowRef: NbWindowRef, config: NbWindowConfig, focusTrapFactory: NbFocusTrapFactoryService, elementRef: ElementRef, renderer: Renderer2);
@@ -32,4 +34,6 @@ export declare class NbWindowComponent implements OnInit, AfterViewChecked, OnDe
     close(): void;
     protected attachTemplate(): void;
     protected attachComponent(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbWindowComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbWindowComponent, "nb-window", never, { "cfr": "cfr"; }, {}, never, never>;
 }

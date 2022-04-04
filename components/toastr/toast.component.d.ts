@@ -3,10 +3,11 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { ElementRef, EventEmitter, OnInit, Renderer2 } from '@angular/core';
+import { ElementRef, EventEmitter, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { NbStatusService } from '../../services/status.service';
 import { NbIconConfig } from '../icon/icon.component';
 import { NbToast } from './model';
+import * as i0 from "@angular/core";
 /**
  * The `NbToastComponent` is responsible for rendering each toast with appropriate styles.
  *
@@ -75,12 +76,13 @@ import { NbToast } from './model';
  * toastr-destroyable-control-hover-background-color:
  * toastr-destroyable-control-hover-border-color:
  * */
-export declare class NbToastComponent implements OnInit {
+export declare class NbToastComponent implements OnInit, OnDestroy {
     protected renderer: Renderer2;
     protected elementRef: ElementRef;
     protected statusService: NbStatusService;
     toast: NbToast;
     destroy: EventEmitter<void>;
+    toastClick: EventEmitter<void>;
     get success(): boolean;
     get info(): boolean;
     get warning(): boolean;
@@ -96,4 +98,7 @@ export declare class NbToastComponent implements OnInit {
     onClick(): void;
     constructor(renderer: Renderer2, elementRef: ElementRef, statusService: NbStatusService);
     ngOnInit(): void;
+    ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbToastComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbToastComponent, "nb-toast", never, { "toast": "toast"; }, { "destroy": "destroy"; "toastClick": "toastClick"; }, never, never>;
 }

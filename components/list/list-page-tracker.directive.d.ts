@@ -1,5 +1,5 @@
 import { QueryList, ElementRef, AfterViewInit, OnDestroy, EventEmitter } from '@angular/core';
-import 'intersection-observer';
+import * as i0 from "@angular/core";
 /**
  * List pager directive
  *
@@ -30,4 +30,6 @@ export declare class NbListPageTrackerDirective implements AfterViewInit, OnDest
     private checkForPageChange;
     private findMostVisiblePage;
     private elementIndex;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbListPageTrackerDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbListPageTrackerDirective, "[nbListPageTracker]", never, { "pageSize": "pageSize"; "startPage": "startPage"; }, { "pageChange": "pageChange"; }, ["listItems"]>;
 }

@@ -1,11 +1,7 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { NbStatusService } from '../../services/status.service';
 import { NbComponentSize } from '../component-size';
 import { NbComponentOrCustomStatus } from '../component-status';
+import * as i0 from "@angular/core";
 /**
  * Styled spinner component
  *
@@ -75,4 +71,6 @@ export declare class NbSpinnerComponent {
     get control(): boolean;
     get additionalClasses(): string[];
     constructor(statusService: NbStatusService);
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSpinnerComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbSpinnerComponent, "nb-spinner", never, { "message": "message"; "size": "size"; "status": "status"; }, {}, never, never>;
 }

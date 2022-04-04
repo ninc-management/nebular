@@ -5,6 +5,7 @@ import { NbDateService } from '../calendar-kit/services/date.service';
 import { NbCalendarTimeModelService } from '../calendar-kit/services/calendar-time-model.service';
 import { NbPortalOutletDirective } from '../cdk/overlay/mapping';
 import { NbTimePickerComponent } from '../timepicker/timepicker.component';
+import * as i0 from "@angular/core";
 export declare class NbCalendarWithTimeComponent<D> extends NbCalendarComponent<D> implements OnInit, AfterViewInit {
     protected dateService: NbDateService<D>;
     cd: ChangeDetectorRef;
@@ -41,6 +42,7 @@ export declare class NbCalendarWithTimeComponent<D> extends NbCalendarComponent<
     title: string;
     applyButtonText: string;
     currentTimeButtonText: string;
+    showCurrentTimeButton: boolean;
     portalOutlet: NbPortalOutletDirective;
     timepicker: NbTimePickerComponent<D>;
     constructor(dateService: NbDateService<D>, cd: ChangeDetectorRef, calendarTimeModelService: NbCalendarTimeModelService<D>);
@@ -55,4 +57,6 @@ export declare class NbCalendarWithTimeComponent<D> extends NbCalendarComponent<
      * */
     showSeconds(): boolean;
     isLarge(): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCalendarWithTimeComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCalendarWithTimeComponent<any>, "nb-calendar-with-time", never, { "visibleDate": "visibleDate"; "twelveHoursFormat": "twelveHoursFormat"; "withSeconds": "withSeconds"; "singleColumn": "singleColumn"; "step": "step"; "timeFormat": "timeFormat"; "title": "title"; "applyButtonText": "applyButtonText"; "currentTimeButtonText": "currentTimeButtonText"; "showCurrentTimeButton": "showCurrentTimeButton"; }, {}, never, never>;
 }

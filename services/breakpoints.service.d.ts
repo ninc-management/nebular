@@ -1,8 +1,4 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
+import * as i0 from "@angular/core";
 /**
  * Media breakpoint type
  *
@@ -50,4 +46,6 @@ export declare class NbMediaBreakpointsService {
     getBreakpointsMap(): {
         [breakpoint: string]: number;
     };
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbMediaBreakpointsService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbMediaBreakpointsService>;
 }

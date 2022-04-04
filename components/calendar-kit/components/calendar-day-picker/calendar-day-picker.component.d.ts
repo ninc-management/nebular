@@ -7,6 +7,7 @@ import { EventEmitter, OnChanges, SimpleChanges, Type } from '@angular/core';
 import { NbCalendarMonthModelService } from '../../services/calendar-month-model.service';
 import { NbCalendarCell, NbCalendarSize, NbCalendarSizeValues } from '../../model';
 import { NbBooleanInput } from '../../../helpers';
+import * as i0 from "@angular/core";
 /**
  * Provides capability pick days.
  * */
@@ -74,4 +75,6 @@ export declare class NbCalendarDayPickerComponent<D, T> implements OnChanges {
     constructor(monthModel: NbCalendarMonthModelService<D>);
     ngOnChanges({ visibleDate, boundingMonths }: SimpleChanges): void;
     onSelect(day: D): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCalendarDayPickerComponent<any, any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCalendarDayPickerComponent<any, any>, "nb-calendar-day-picker", never, { "visibleDate": "visibleDate"; "boundingMonths": "boundingMonths"; "min": "min"; "max": "max"; "filter": "filter"; "setCellComponent": "cellComponent"; "size": "size"; "date": "date"; "showWeekNumber": "showWeekNumber"; "weekNumberSymbol": "weekNumberSymbol"; }, { "dateChange": "dateChange"; }, never, never>;
 }

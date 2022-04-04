@@ -6,6 +6,7 @@
 import { EventEmitter, Type } from '@angular/core';
 import { NbCalendarCell, NbCalendarSize, NbCalendarViewMode, NbCalendarSizeValues, NbCalendarViewModeValues } from '../calendar-kit/model';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 /**
  * Calendar component provides a capability to choose a date.
  *
@@ -249,4 +250,6 @@ export declare class NbCalendarComponent<D> {
      * Emits date when selected.
      * */
     dateChange: EventEmitter<D>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCalendarComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCalendarComponent<any>, "nb-calendar", never, { "boundingMonth": "boundingMonth"; "startView": "startView"; "min": "min"; "max": "max"; "filter": "filter"; "dayCellComponent": "dayCellComponent"; "monthCellComponent": "monthCellComponent"; "yearCellComponent": "yearCellComponent"; "size": "size"; "visibleDate": "visibleDate"; "showNavigation": "showNavigation"; "date": "date"; "showWeekNumber": "showWeekNumber"; "weekNumberSymbol": "weekNumberSymbol"; }, { "dateChange": "dateChange"; }, never, never>;
 }

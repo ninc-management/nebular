@@ -6,6 +6,7 @@ import { NbPlatform } from '../cdk/platform/platform-service';
 import { NbDateService, NbDayPeriod } from '../calendar-kit/services/date.service';
 import { NbCalendarTimeModelService } from '../calendar-kit/services/calendar-time-model.service';
 import { NbSelectedTimePayload, NbTimePickerConfig } from './model';
+import * as i0 from "@angular/core";
 interface NbTimePartOption {
     value: number;
     text: string;
@@ -126,5 +127,7 @@ export declare class NbTimePickerComponent<D> implements OnChanges, OnInit {
      */
     buildTimeFormat(): string;
     protected initFromConfig(config: NbTimePickerConfig): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTimePickerComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbTimePickerComponent<any>, "nb-timepicker", ["nbTimepicker"], { "timeFormat": "timeFormat"; "twelveHoursFormat": "twelveHoursFormat"; "withSeconds": "withSeconds"; "singleColumn": "singleColumn"; "step": "step"; "date": "date"; "showFooter": "showFooter"; "applyButtonText": "applyButtonText"; "hoursText": "hoursText"; "minutesText": "minutesText"; "secondsText": "secondsText"; "ampmText": "ampmText"; "currentTimeButtonText": "currentTimeButtonText"; }, { "onSelectTime": "onSelectTime"; }, never, never>;
 }
 export {};

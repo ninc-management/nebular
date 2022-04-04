@@ -5,6 +5,7 @@
  */
 import { ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import * as i0 from "@angular/core";
 export interface NbChatMessageFileIconPreview {
     url: string;
     icon: string;
@@ -48,4 +49,6 @@ export declare class NbChatMessageFileComponent {
     set files(files: NbChatMessageFile[]);
     constructor(cd: ChangeDetectorRef, domSanitizer: DomSanitizer);
     isImage(file: NbChatMessageFile): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbChatMessageFileComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbChatMessageFileComponent, "nb-chat-message-file", never, { "message": "message"; "sender": "sender"; "date": "date"; "dateFormat": "dateFormat"; "files": "files"; }, {}, never, never>;
 }

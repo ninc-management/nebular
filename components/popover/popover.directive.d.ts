@@ -12,6 +12,7 @@ import { NbTrigger, NbTriggerValues } from '../cdk/overlay/overlay-trigger';
 import { NbOverlayConfig } from '../cdk/overlay/mapping';
 import { NbPopoverComponent } from './popover.component';
 import { Subject } from 'rxjs';
+import * as i0 from "@angular/core";
 /**
  * Powerful popover directive, which provides the best UX for your users.
  *
@@ -136,6 +137,8 @@ export declare class NbPopoverDirective implements NbDynamicOverlayController, O
      * Sets popover offset
      * */
     offset: number;
+    /** Disables the display of the tooltip. */
+    disabled: boolean;
     get popoverClass(): string;
     set popoverClass(value: string);
     _popoverClass: string;
@@ -154,4 +157,6 @@ export declare class NbPopoverDirective implements NbDynamicOverlayController, O
     toggle(): void;
     ngOnDestroy(): void;
     protected configureDynamicOverlay(): NbDynamicOverlayHandler;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbPopoverDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbPopoverDirective, "[nbPopover]", ["nbPopover"], { "content": "nbPopover"; "context": "nbPopoverContext"; "position": "nbPopoverPlacement"; "adjustment": "nbPopoverAdjustment"; "trigger": "nbPopoverTrigger"; "offset": "nbPopoverOffset"; "disabled": "nbTooltipDisabled"; "popoverClass": "nbPopoverClass"; }, { "nbPopoverShowStateChange": "nbPopoverShowStateChange"; }, never>;
 }

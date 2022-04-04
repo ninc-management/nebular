@@ -1,6 +1,7 @@
 import { OnDestroy, OnInit, TemplateRef } from '@angular/core';
 import { NbBooleanInput } from '../helpers';
-import { NbCustomMessageService } from './custom-message.service';
+import { NbChatCustomMessageService } from './chat-custom-message.service';
+import * as i0 from "@angular/core";
 /**
  * `[nbCustomMessage]` directive should be used as a structural directive or should be applied to the `ng-template`:
  *
@@ -18,7 +19,7 @@ import { NbCustomMessageService } from './custom-message.service';
  */
 export declare class NbChatCustomMessageDirective implements OnInit, OnDestroy {
     templateRef: TemplateRef<any>;
-    protected customMessageService: NbCustomMessageService;
+    protected customMessageService: NbChatCustomMessageService;
     /**
      * Defines a message type which should rendered with the custom message template.
      * @type {string}
@@ -38,7 +39,9 @@ export declare class NbChatCustomMessageDirective implements OnInit, OnDestroy {
     protected _noStyles: boolean;
     static ngAcceptInputType_noStyles: NbBooleanInput;
     get noStyles(): boolean;
-    constructor(templateRef: TemplateRef<any>, customMessageService: NbCustomMessageService);
+    constructor(templateRef: TemplateRef<any>, customMessageService: NbChatCustomMessageService);
     ngOnInit(): void;
     ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbChatCustomMessageDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbChatCustomMessageDirective, "[nbCustomMessage]", never, { "nbCustomMessage": "nbCustomMessage"; "nbCustomMessageNoStyles": "nbCustomMessageNoStyles"; }, {}, never>;
 }

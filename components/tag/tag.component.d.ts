@@ -10,6 +10,7 @@ import { NbHighlightableOption } from '../cdk/a11y/descendant-key-manager';
 import { NbBooleanInput } from '../helpers';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbComponentSize } from '../component-size';
+import * as i0 from "@angular/core";
 export declare type NbTagAppearance = 'filled' | 'outline';
 export interface NbTagSelectionChange {
     tag: NbTagComponent;
@@ -274,4 +275,6 @@ export declare class NbTagComponent implements AfterViewInit, OnDestroy, NbHighl
     _toggleSelection(): void;
     setActiveStyles(): void;
     setInactiveStyles(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTagComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbTagComponent, "nb-tag", ["nbTag"], { "text": "text"; "selected": "selected"; "removable": "removable"; "appearance": "appearance"; "status": "status"; "size": "size"; "role": "role"; }, { "remove": "remove"; "selectedChange": "selectedChange"; }, never, never>;
 }

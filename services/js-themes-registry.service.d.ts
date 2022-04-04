@@ -1,9 +1,5 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { NbJSThemeOptions } from './js-themes/theme.options';
+import * as i0 from "@angular/core";
 export declare const BUILT_IN_THEMES: NbJSThemeOptions[];
 /**
  * Js Themes registry - provides access to the JS themes' variables.
@@ -34,4 +30,6 @@ export declare class NbJSThemesRegistry {
     private combineByNames;
     private isObject;
     private mergeDeep;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbJSThemesRegistry, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbJSThemesRegistry>;
 }

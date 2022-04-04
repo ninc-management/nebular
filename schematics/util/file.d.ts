@@ -1,13 +1,14 @@
+/// <reference types="node" />
 import { Tree } from '@angular-devkit/schematics';
 /**
  * Reads specified file from the given tree
  * Throws the exception if file not found
  * */
-export declare function readText(tree: Tree, fileName: string, encoding?: string): string;
+export declare function readText(tree: Tree, fileName: string, encoding?: BufferEncoding): string;
 /**
  * Reads specified file as JSON from the given tree
  * */
-export declare function readJSON(tree: Tree, fileName: string, encoding?: string): any;
+export declare function readJSON(tree: Tree, fileName: string, encoding?: BufferEncoding): any;
 /**
  * Writes specified files to the given tree
  * */

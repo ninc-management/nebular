@@ -1,14 +1,10 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { NbBooleanInput } from '../helpers';
 import { NbComponentSize } from '../component-size';
 import { NbComponentShape } from '../component-shape';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbBadgePosition } from '../badge/badge.component';
+import * as i0 from "@angular/core";
 /**
  * Represents a component showing a user avatar (picture) with a user name on the right.
  * @stacked-example(Showcase, user/user-showcase.component)
@@ -196,4 +192,6 @@ export declare class NbUserComponent {
     get round(): boolean;
     constructor(domSanitizer: DomSanitizer);
     getInitials(): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbUserComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbUserComponent, "nb-user", never, { "name": "name"; "title": "title"; "picture": "picture"; "color": "color"; "size": "size"; "shape": "shape"; "showName": "showName"; "showTitle": "showTitle"; "showInitials": "showInitials"; "onlyPicture": "onlyPicture"; "badgeText": "badgeText"; "badgeStatus": "badgeStatus"; "badgePosition": "badgePosition"; }, {}, never, never>;
 }

@@ -1,9 +1,5 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { NbChatOptions } from './chat.options';
+import * as i0 from "@angular/core";
 /**
  * Chat message component.
  */
@@ -45,4 +41,6 @@ export declare class NbChatMessageMapComponent {
     };
     mapKey: string;
     constructor(options: NbChatOptions);
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbChatMessageMapComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbChatMessageMapComponent, "nb-chat-message-map", never, { "message": "message"; "sender": "sender"; "date": "date"; "dateFormat": "dateFormat"; "latitude": "latitude"; "longitude": "longitude"; }, {}, never, never>;
 }

@@ -8,6 +8,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { NbStatusService } from '../../services/status.service';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbIconLibraries } from './icon-libraries';
+import * as i0 from "@angular/core";
 export interface NbIconConfig {
     icon: string;
     pack?: string;
@@ -151,4 +152,6 @@ export declare class NbIconComponent implements NbIconConfig, OnChanges, OnInit 
     }): import("./icon-libraries").NbIconDefinition;
     protected clearIcon(): void;
     protected assignClasses(classes: string[]): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbIconComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbIconComponent, "nb-icon", never, { "icon": "icon"; "pack": "pack"; "options": "options"; "status": "status"; "config": "config"; }, {}, never, never>;
 }

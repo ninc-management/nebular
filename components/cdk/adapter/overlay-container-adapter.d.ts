@@ -1,4 +1,5 @@
 import { NbOverlayContainer } from '../overlay/mapping';
+import * as i0 from "@angular/core";
 /**
  * Provides nb-layout as overlay container.
  * Container has to be cleared when layout destroys.
@@ -11,4 +12,7 @@ export declare class NbOverlayContainerAdapter extends NbOverlayContainer {
     setContainer(container: HTMLElement): void;
     clearContainer(): void;
     protected _createContainer(): void;
+    protected checkContainer(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbOverlayContainerAdapter, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbOverlayContainerAdapter>;
 }

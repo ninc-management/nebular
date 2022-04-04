@@ -1,12 +1,8 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { Observable } from 'rxjs';
 import { NbJSThemeOptions } from './js-themes/theme.options';
 import { NbJSThemesRegistry } from './js-themes-registry.service';
 import { NbMediaBreakpointsService, NbMediaBreakpoint } from './breakpoints.service';
+import * as i0 from "@angular/core";
 /**
  * Main Nebular service. Includes various helper methods.
  */
@@ -67,4 +63,6 @@ export declare class NbThemeService {
      * @returns {Observable<any>}
      */
     onRemoveLayoutClass(): Observable<any>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbThemeService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbThemeService>;
 }

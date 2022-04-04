@@ -1,4 +1,5 @@
 import { NbLayoutDirectionService } from '../../../services/direction.service';
+import * as i0 from "@angular/core";
 export declare enum NbGlobalLogicalPosition {
     TOP_START = "top-start",
     TOP_END = "top-end",
@@ -23,4 +24,6 @@ export declare class NbPositionHelper {
     protected toLogicalPositionWhenRtl(position: NbGlobalPhysicalPosition): NbGlobalLogicalPosition;
     protected toPhysicalPositionWhenLtr(position: NbGlobalLogicalPosition): NbGlobalPhysicalPosition;
     protected toPhysicalPositionWhenRtl(position: NbGlobalLogicalPosition): NbGlobalPhysicalPosition;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbPositionHelper, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbPositionHelper>;
 }

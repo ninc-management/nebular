@@ -1,3 +1,4 @@
+import * as i0 from "@angular/core";
 /**
  *
  * Flip card example:
@@ -65,4 +66,6 @@ export declare class NbFlipCardComponent {
      */
     showToggleButton: boolean;
     toggle(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbFlipCardComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbFlipCardComponent, "nb-flip-card", never, { "flipped": "flipped"; "showToggleButton": "showToggleButton"; }, {}, never, ["nb-card-front", "nb-card-back"]>;
 }

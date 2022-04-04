@@ -16,9 +16,12 @@ import { NbBooleanInput } from '../helpers';
 import { NbFormFieldControl, NbFormFieldControlConfig } from '../form-field/form-field-control';
 import { NbFocusMonitor } from '../cdk/a11y/a11y.module';
 import { NbScrollStrategies } from '../cdk/adapter/block-scroll-strategy-adapter';
+import * as i0 from "@angular/core";
 export declare type NbSelectCompareFunction<T = any> = (v1: any, v2: any) => boolean;
 export declare type NbSelectAppearance = 'outline' | 'filled' | 'hero';
 export declare class NbSelectLabelComponent {
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSelectLabelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbSelectLabelComponent, "nb-select-label", never, {}, {}, never, ["*"]>;
 }
 export declare function nbSelectFormFieldControlConfigFactory(): NbFormFieldControlConfig;
 /**
@@ -491,6 +494,12 @@ export declare class NbSelectComponent implements OnChanges, AfterViewInit, Afte
      * */
     optionsPanelClass: string | string[];
     /**
+     * Specifies width (in pixels) to be set on `nb-option`s container (`nb-option-list`)
+     * */
+    get optionsWidth(): number;
+    set optionsWidth(value: number);
+    protected _optionsWidth: number | undefined;
+    /**
      * Adds `outline` styles
      */
     get outline(): boolean;
@@ -676,6 +685,7 @@ export declare class NbSelectComponent implements OnChanges, AfterViewInit, Afte
      * Selects value.
      * */
     protected selectValue(value: any): void;
+    protected shouldShow(): boolean;
     /**
      * Sets touched if focus moved outside of button and overlay,
      * ignoring the case when focus moved to options overlay.
@@ -698,4 +708,6 @@ export declare class NbSelectComponent implements OnChanges, AfterViewInit, Afte
     get rectangle(): boolean;
     get round(): boolean;
     get semiRound(): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSelectComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbSelectComponent, "nb-select", never, { "size": "size"; "status": "status"; "shape": "shape"; "appearance": "appearance"; "optionsListClass": "optionsListClass"; "optionsPanelClass": "optionsPanelClass"; "optionsWidth": "optionsWidth"; "outline": "outline"; "filled": "filled"; "hero": "hero"; "disabled": "disabled"; "fullWidth": "fullWidth"; "placeholder": "placeholder"; "compareWith": "compareWith"; "selected": "selected"; "multiple": "multiple"; "optionsOverlayOffset": "optionsOverlayOffset"; "scrollStrategy": "scrollStrategy"; }, { "selectedChange": "selectedChange"; }, ["customLabel", "options"], ["nb-select-label", "nb-option, nb-option-group"]>;
 }

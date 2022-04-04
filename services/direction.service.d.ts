@@ -1,5 +1,6 @@
 import { InjectionToken } from '@angular/core';
 import { Observable } from 'rxjs';
+import * as i0 from "@angular/core";
 /**
  * Layout direction.
  * */
@@ -44,4 +45,6 @@ export declare class NbLayoutDirectionService {
      * @returns Observable<NbLayoutDirection>.
      */
     onDirectionChange(): Observable<NbLayoutDirection>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbLayoutDirectionService, [{ optional: true; }]>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbLayoutDirectionService>;
 }

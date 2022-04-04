@@ -3,10 +3,17 @@
  * Copyright Akveo. All Rights Reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
-import { QueryList, TemplateRef } from '@angular/core';
+import { EventEmitter, QueryList, TemplateRef } from '@angular/core';
 import { NbBooleanInput } from '../helpers';
 import { NbStepComponent } from './step.component';
+import * as i0 from "@angular/core";
 export declare type NbStepperOrientation = 'vertical' | 'horizontal';
+export interface NbStepChangeEvent {
+    index: number;
+    step: NbStepComponent;
+    previouslySelectedIndex: number;
+    previouslySelectedStep: NbStepComponent;
+}
 /**
  * Stepper component
  *
@@ -70,6 +77,9 @@ export declare type NbStepperOrientation = 'vertical' | 'horizontal';
  * 'nbStepperPrevious' and 'nbStepperNext' buttons.
  * @stacked-example(Disabled steps navigation, stepper/stepper-disabled-step-nav.component)
  *
+ * Use `stepChange` output to listening to step change event. This event emits `NbStepChangeEvent` object.
+ * @stacked-example(Step change event, stepper/stepper-step-change-event.component)
+ *
  * @styles
  *
  * stepper-step-text-color:
@@ -126,6 +136,11 @@ export declare class NbStepperComponent {
     get linear(): boolean;
     protected _linear: boolean;
     static ngAcceptInputType_linear: NbBooleanInput;
+    /**
+     * Emits when step changed
+     * @type {EventEmitter<NbStepChangeEvent>}
+     */
+    stepChange: EventEmitter<NbStepChangeEvent>;
     get vertical(): boolean;
     get horizontal(): boolean;
     steps: QueryList<NbStepComponent>;
@@ -138,6 +153,11 @@ export declare class NbStepperComponent {
      * */
     previous(): void;
     /**
+     * Select step if navigation is not disabled
+     * @param { NbStepComponent } step
+     */
+    changeStep(step: NbStepComponent): void;
+    /**
      * Reset stepper and stepControls to initial state
      * */
     reset(): void;
@@ -146,4 +166,6 @@ export declare class NbStepperComponent {
     protected isStepValid(index: number): boolean;
     protected canBeSelected(indexToCheck: number): boolean;
     protected markCurrentStepInteracted(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbStepperComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbStepperComponent, "nb-stepper", never, { "selectedIndex": "selectedIndex"; "disableStepNavigation": "disableStepNavigation"; "selected": "selected"; "orientation": "orientation"; "linear": "linear"; }, { "stepChange": "stepChange"; }, ["steps"], ["nb-step"]>;
 }

@@ -4,6 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { ComponentFactoryResolver, ComponentRef } from '@angular/core';
+import { Observable } from 'rxjs';
 import { NbOverlayRef } from '../cdk/overlay/mapping';
 import { NbOverlayService } from '../cdk/overlay/overlay-service';
 import { NbPositionBuilderService } from '../cdk/overlay/overlay-position';
@@ -12,11 +13,15 @@ import { NbToastrContainerComponent } from './toastr-container.component';
 import { NbToastrConfig } from './toastr-config';
 import { NbToast } from './model';
 import { NbToastComponent } from './toast.component';
+import * as i0 from "@angular/core";
 export declare class NbToastRef {
     private toastContainer;
     private toast;
+    toastInstance: NbToastComponent;
     constructor(toastContainer: NbToastContainer, toast: NbToast);
     close(): void;
+    onClose(): Observable<void>;
+    onClick(): Observable<void>;
 }
 export declare class NbToastContainer {
     protected position: NbGlobalPosition;
@@ -57,6 +62,8 @@ export declare class NbToastrContainerRegistry {
     protected createContainer(position: NbGlobalLogicalPosition): NbToastrOverlayWithContainer;
     protected addClassToOverlayHost(overlayRef: NbOverlayRef): void;
     protected existsInDom(toastContainer: NbToastContainer): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbToastrContainerRegistry, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbToastrContainerRegistry>;
 }
 /**
  * The `NbToastrService` provides a capability to build toast notifications.
@@ -167,5 +174,7 @@ export declare class NbToastrService {
      * Shows control toast with message, title and user config.
      * */
     control(message: any, title?: any, config?: Partial<NbToastrConfig>): NbToastRef;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbToastrService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbToastrService>;
 }
 export {};

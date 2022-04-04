@@ -1,4 +1,5 @@
 import { Observable, Subject } from 'rxjs';
+import * as i0 from "@angular/core";
 /**
  * Scroll position type
  */
@@ -64,4 +65,6 @@ export declare class NbLayoutScrollService {
      */
     fireScrollChange(event: any): void;
     scrollable(scrollable: boolean): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbLayoutScrollService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbLayoutScrollService>;
 }

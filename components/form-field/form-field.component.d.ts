@@ -8,6 +8,7 @@ import { Subject, Observable, ReplaySubject } from 'rxjs';
 import { NbPrefixDirective } from './prefix.directive';
 import { NbSuffixDirective } from './suffix.directive';
 import { NbFormFieldControl, NbFormControlState, NbFormFieldControlConfig } from './form-field-control';
+import * as i0 from "@angular/core";
 export declare type NbFormControlAddon = 'prefix' | 'suffix';
 export declare class NbFormFieldComponent implements AfterContentChecked, AfterContentInit, AfterViewInit, OnDestroy {
     protected cd: ChangeDetectorRef;
@@ -35,4 +36,6 @@ export declare class NbFormFieldComponent implements AfterContentChecked, AfterC
     protected getAddonClasses(addon: NbFormControlAddon, state: NbFormControlState): string[];
     protected getFormControlConfig(): NbFormFieldControlConfig;
     protected isStatesEqual(oldState: NbFormControlState, state: NbFormControlState): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbFormFieldComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbFormFieldComponent, "nb-form-field", never, {}, {}, ["formControl", "formControlConfig", "prefix", "suffix"], ["[nbPrefix]", "*", "[nbSuffix]"]>;
 }

@@ -1,8 +1,4 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
+import * as i0 from "@angular/core";
 /**
  * Chat message component.
  */
@@ -27,4 +23,6 @@ export declare class NbChatMessageTextComponent {
      * @type {string}
      */
     dateFormat: string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbChatMessageTextComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbChatMessageTextComponent, "nb-chat-message-text", never, { "sender": "sender"; "message": "message"; "date": "date"; "dateFormat": "dateFormat"; }, {}, never, never>;
 }

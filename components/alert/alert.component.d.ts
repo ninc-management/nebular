@@ -8,6 +8,7 @@ import { NbStatusService } from '../../services/status.service';
 import { NbComponentSize } from '../component-size';
 import { NbComponentOrCustomStatus, NbComponentStatus } from '../component-status';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 /**
  * Alert component.
  *
@@ -173,4 +174,6 @@ export declare class NbAlertComponent {
     get basicOutline(): boolean;
     get controlOutline(): boolean;
     get additionalClasses(): string[];
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbAlertComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbAlertComponent, "nb-alert", never, { "size": "size"; "status": "status"; "accent": "accent"; "outline": "outline"; "closable": "closable"; }, { "close": "close"; }, never, ["*"]>;
 }

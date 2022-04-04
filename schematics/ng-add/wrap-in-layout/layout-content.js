@@ -6,14 +6,33 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.wrapHtmlFileTemplateInLayout = exports.wrapInlineTemplateInLayout = void 0;
-var layoutStart = "<nb-layout>\n\n  <nb-layout-header fixed>\n  <!-- Insert header here -->\n  </nb-layout-header>\n\n  <nb-layout-column>";
-var layoutEnd = "  </nb-layout-column>\n\n  <nb-layout-footer fixed>\n  <!-- Insert footer here -->\n  </nb-layout-footer>\n\n</nb-layout>";
+const layoutStart = `<nb-layout>
+
+  <nb-layout-header fixed>
+  <!-- Insert header here -->
+  </nb-layout-header>
+
+  <nb-layout-column>`;
+const layoutEnd = `  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>`;
 function wrapInlineTemplateInLayout(template) {
-    return " `\n" + paddNotEmpty(layoutStart, 4) + "\n" + padd(template, 4) + "\n" + paddNotEmpty(layoutEnd, 4) + "\n  `";
+    return ` \`
+${paddNotEmpty(layoutStart, 4)}
+${padd(template, 4)}
+${paddNotEmpty(layoutEnd, 4)}
+  \``;
 }
 exports.wrapInlineTemplateInLayout = wrapInlineTemplateInLayout;
 function wrapHtmlFileTemplateInLayout(template) {
-    return layoutStart + "\n" + padd(template, 4) + "\n" + layoutEnd + "\n";
+    return `${layoutStart}
+${padd(template, 4)}
+${layoutEnd}
+`;
 }
 exports.wrapHtmlFileTemplateInLayout = wrapHtmlFileTemplateInLayout;
 /**
@@ -22,7 +41,7 @@ exports.wrapHtmlFileTemplateInLayout = wrapHtmlFileTemplateInLayout;
 function padd(text, paddLen) {
     return text
         .split('\n')
-        .map(function (line) { return "" + ' '.repeat(paddLen) + line; })
+        .map(line => `${' '.repeat(paddLen)}${line}`)
         .join('\n');
 }
 /**

@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, ComponentFactoryResolver, ComponentRef, EmbeddedViewRef, Injector, ViewContainerRef } from '@angular/core';
 import { NbPosition } from './overlay-position';
 import { NbComponentPortal, NbPortalInjector, NbPortalOutletDirective, NbTemplatePortal } from './mapping';
+import * as i0 from "@angular/core";
 export interface NbRenderableContainer {
     /**
      * A renderContent method renders content with provided context.
@@ -24,6 +25,8 @@ export declare class NbPositionedContainerComponent {
     get left(): boolean;
     get startTop(): boolean;
     get startBottom(): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbPositionedContainerComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbPositionedContainerComponent, "ng-component", never, { "position": "position"; }, {}, never, never>;
 }
 export declare class NbOverlayContainerComponent {
     protected vcr: ViewContainerRef;
@@ -39,4 +42,6 @@ export declare class NbOverlayContainerComponent {
     attachStringContent(content: string): void;
     detach(): void;
     protected createChildInjector(cfr: ComponentFactoryResolver): NbPortalInjector;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbOverlayContainerComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbOverlayContainerComponent, "nb-overlay-container", never, {}, {}, never, never>;
 }

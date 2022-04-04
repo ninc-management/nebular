@@ -1,10 +1,13 @@
 import { ElementRef, SimpleChange, Type } from '@angular/core';
+import { Subject } from 'rxjs';
 import { NbTrigger, NbTriggerStrategy, NbTriggerStrategyBuilderService } from '../overlay-trigger';
 import { NbAdjustableConnectedPositionStrategy, NbAdjustment, NbPosition, NbPositionBuilderService } from '../overlay-position';
 import { NbRenderableContainer } from '../overlay-container';
 import { NbOverlayContent } from '../overlay-service';
 import { NbDynamicOverlay } from './dynamic-overlay';
 import { NbOverlayConfig } from '../mapping';
+import { NbLayoutDirectionService } from '../../../../services/direction.service';
+import * as i0 from "@angular/core";
 export declare class NbDynamicOverlayChange extends SimpleChange {
     constructor(previousValue: any, currentValue: any, firstChange?: boolean);
     isChanged(): boolean;
@@ -13,11 +16,13 @@ export declare class NbDynamicOverlayHandler {
     private positionBuilder;
     private triggerStrategyBuilder;
     private dynamicOverlayService;
+    private directionService;
     protected _componentType: Type<NbRenderableContainer>;
     protected _host: ElementRef;
     protected _context: Object;
     protected _content: NbOverlayContent;
     protected _trigger: NbTrigger;
+    protected _disabled: boolean;
     protected _position: NbPosition;
     protected _adjustment: NbAdjustment;
     protected _offset: number;
@@ -28,9 +33,11 @@ export declare class NbDynamicOverlayHandler {
     protected changes: {
         [key: string]: NbDynamicOverlayChange;
     };
-    constructor(positionBuilder: NbPositionBuilderService, triggerStrategyBuilder: NbTriggerStrategyBuilderService, dynamicOverlayService: NbDynamicOverlay);
+    protected destroy$: Subject<void>;
+    constructor(positionBuilder: NbPositionBuilderService, triggerStrategyBuilder: NbTriggerStrategyBuilderService, dynamicOverlayService: NbDynamicOverlay, directionService: NbLayoutDirectionService);
     host(host: ElementRef): this;
     trigger(trigger: NbTrigger): this;
+    disabled(disabled: boolean): this;
     position(position: NbPosition): this;
     adjustment(adjustment: NbAdjustment): this;
     componentType(componentType: Type<NbRenderableContainer>): this;
@@ -45,6 +52,7 @@ export declare class NbDynamicOverlayHandler {
     destroy(): void;
     protected createPositionStrategy(): NbAdjustableConnectedPositionStrategy;
     protected subscribeOnTriggers(dynamicOverlay: NbDynamicOverlay): void;
+    protected subscribeOnDirectionChange(): void;
     protected isContainerRerenderRequired(): boolean;
     protected isPositionStrategyUpdateRequired(): boolean;
     protected isTriggerStrategyUpdateRequired(): boolean;
@@ -59,5 +67,8 @@ export declare class NbDynamicOverlayHandler {
     protected isTriggerUpdated(): boolean;
     protected isOffsetUpdated(): boolean;
     protected isOverlayConfigUpdated(): boolean;
+    protected isDisabledUpdated(): boolean;
     protected clearChanges(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbDynamicOverlayHandler, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbDynamicOverlayHandler>;
 }

@@ -12,6 +12,7 @@ import { NbComponentShape } from '../component-shape';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbButton } from '../button/base-button';
 import { NbButtonToggleAppearance, NbButtonToggleDirective } from './button-toggle.directive';
+import * as i0 from "@angular/core";
 /**
  * `<nb-button-group>` visually groups buttons together and allow to control buttons properties and the state as a
  * group.
@@ -148,4 +149,6 @@ export declare class NbButtonGroupComponent implements OnChanges, AfterContentIn
     protected listenButtonPressedState(buttons: NbButton[]): void;
     protected syncButtonsProperties(buttons: NbButton[]): void;
     protected emitCurrentValue(toggleButtons: NbButtonToggleDirective[]): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbButtonGroupComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbButtonGroupComponent, "nb-button-group", never, { "size": "size"; "status": "status"; "shape": "shape"; "appearance": "appearance"; "disabled": "disabled"; "multiple": "multiple"; "filled": "filled"; "outline": "outline"; "ghost": "ghost"; }, { "valueChange": "valueChange"; }, ["buttons"], ["*"]>;
 }

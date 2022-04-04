@@ -4,8 +4,25 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 import { EventEmitter } from '@angular/core';
-import { RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NbBooleanInput } from '../helpers';
+import { NbIconConfig } from '../icon/icon.component';
+import * as i0 from "@angular/core";
+export interface NbRouteTab {
+    route?: RouterLink['routerLink'] | undefined;
+    title?: string | undefined;
+    icon?: string | NbIconConfig | undefined;
+    disabled?: boolean | undefined;
+    responsive?: boolean | undefined;
+    queryParams?: RouterLink['queryParams'] | undefined;
+    queryParamsHandling?: RouterLink['queryParamsHandling'] | undefined;
+    fragment?: RouterLink['fragment'] | undefined;
+    preserveFragment?: RouterLink['preserveFragment'] | undefined;
+    skipLocationChange?: RouterLink['skipLocationChange'] | undefined;
+    replaceUrl?: RouterLink['replaceUrl'] | undefined;
+    state?: RouterLink['state'] | undefined;
+    activeLinkOptions?: RouterLinkActive['routerLinkActiveOptions'] | undefined;
+}
 /**
  * Route tabset components.
  * Renders tabs inside of a router-outlet.
@@ -16,7 +33,7 @@ import { NbBooleanInput } from '../helpers';
  *    title: 'Route tab #1',
  *    route: '/pages/description',
  *    icon: 'home',
- *    responsive: true, // hide title before `route-tabs-icon-only-max-width` value
+ *    responsive: true, // hide title before `$tabset-tab-text-hide-breakpoint` value
  *  },
  *  {
  *    title: 'Route tab #2',
@@ -74,15 +91,13 @@ import { NbBooleanInput } from '../helpers';
  * route-tabset-scrollbar-color:
  * route-tabset-scrollbar-background-color:
  * route-tabset-scrollbar-width:
- * route-tabset-tab-text-hide-breakpoint:
  */
 export declare class NbRouteTabsetComponent {
     fullWidthValue: boolean;
     /**
      * Tabs configuration
-     * @param Object{route: string, title: string, tag?: string, responsive?: boolean, disabled?: boolean}
      */
-    tabs: any[];
+    tabs: NbRouteTab[];
     /**
      * Options passed to `routerLinkActiveOptions` directive which set on tab links.
      * `{ exact: true }` by default.
@@ -96,8 +111,10 @@ export declare class NbRouteTabsetComponent {
     static ngAcceptInputType_fullWidth: NbBooleanInput;
     /**
      * Emits when tab is selected
-     * @type {EventEmitter<any>}
+     * @type {EventEmitter<NbRouteTab>}
      */
-    changeTab: EventEmitter<any>;
-    selectTab(tab: any): void;
+    changeTab: EventEmitter<NbRouteTab>;
+    selectTab(tab: NbRouteTab): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbRouteTabsetComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbRouteTabsetComponent, "nb-route-tabset", never, { "tabs": "tabs"; "activeLinkOptions": "activeLinkOptions"; "fullWidth": "fullWidth"; }, { "changeTab": "changeTab"; }, never, never>;
 }

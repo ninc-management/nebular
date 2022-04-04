@@ -6,6 +6,7 @@
 import { ChangeDetectorRef, EventEmitter } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NbComponentOrCustomStatus } from '../component-status';
+import * as i0 from "@angular/core";
 /**
  * Chat form component.
  *
@@ -94,12 +95,14 @@ export declare class NbChatFormComponent {
     constructor(cd: ChangeDetectorRef, domSanitizer: DomSanitizer);
     onDrop(event: any): void;
     removeFile(file: any): void;
-    onDragOver(): void;
-    onDragLeave(): void;
+    onDragOver(event: DragEvent): void;
+    onDragLeave(event: DragEvent): void;
     sendMessage(): void;
     setStatus(status: NbComponentOrCustomStatus): void;
     getInputStatus(): NbComponentOrCustomStatus;
     getButtonStatus(): NbComponentOrCustomStatus;
     protected getHighlightStatus(): NbComponentOrCustomStatus;
     onModelChange(value: string): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbChatFormComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbChatFormComponent, "nb-chat-form", never, { "message": "message"; "messagePlaceholder": "messagePlaceholder"; "buttonTitle": "buttonTitle"; "buttonIcon": "buttonIcon"; "showButton": "showButton"; "dropFiles": "dropFiles"; "dropFilePlaceholder": "dropFilePlaceholder"; }, { "send": "send"; "onInputChange": "onInputChange"; }, never, never>;
 }

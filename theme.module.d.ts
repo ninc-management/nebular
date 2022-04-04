@@ -8,6 +8,8 @@ import { NbThemeOptions } from './theme.options';
 import { NbJSThemeOptions } from './services/js-themes/theme.options';
 import { NbMediaBreakpoint } from './services/breakpoints.service';
 import { NbLayoutDirection } from './services/direction.service';
+import * as i0 from "@angular/core";
+import * as i1 from "@angular/common";
 export declare function windowFactory(platformId: Object): Window | undefined;
 export declare class NbThemeModule {
     /**
@@ -21,4 +23,7 @@ export declare class NbThemeModule {
      * @returns {ModuleWithProviders}
      */
     static forRoot(nbThemeOptions?: NbThemeOptions, nbJSThemes?: NbJSThemeOptions[], nbMediaBreakpoints?: NbMediaBreakpoint[], layoutDirection?: NbLayoutDirection): ModuleWithProviders<NbThemeModule>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbThemeModule, never>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<NbThemeModule, never, [typeof i1.CommonModule], never>;
+    static ɵinj: i0.ɵɵInjectorDeclaration<NbThemeModule>;
 }

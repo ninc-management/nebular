@@ -13,6 +13,7 @@ import { NbRestoreScrollTopHelper } from './restore-scroll-top.service';
 import { NbScrollPosition, NbLayoutScrollService } from '../../services/scroll.service';
 import { NbLayoutDimensions, NbLayoutRulerService } from '../../services/ruler.service';
 import { NbOverlayContainerAdapter } from '../cdk/adapter/overlay-container-adapter';
+import * as i0 from "@angular/core";
 /**
  * Layout container component.
  * When using with Nebular Theme System it is required that all child components should be placed inside.
@@ -94,7 +95,6 @@ import { NbOverlayContainerAdapter } from '../cdk/adapter/overlay-container-adap
  * layout-min-height:
  * layout-content-width:
  * layout-window-mode-min-width:
- * layout-window-mode-max-width:
  * layout-window-mode-background-color:
  * layout-window-mode-padding-top:
  * layout-window-shadow:
@@ -190,6 +190,8 @@ export declare class NbLayoutComponent implements AfterViewInit, OnDestroy {
     private scroll;
     protected blockScroll(): void;
     private enableScroll;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbLayoutComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbLayoutComponent, "nb-layout", never, { "center": "center"; "windowMode": "windowMode"; "withScroll": "withScroll"; "restoreScrollTop": "restoreScrollTop"; }, {}, never, ["nb-layout-header:not([subheader])", "nb-sidebar", "nb-layout-header[subheader]", "nb-layout-column", "nb-layout-footer"]>;
 }
 /**
  * A container component which determines a content position inside of the layout.
@@ -216,6 +218,8 @@ export declare class NbLayoutColumnComponent {
      */
     set start(val: boolean);
     static ngAcceptInputType_start: NbBooleanInput;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbLayoutColumnComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbLayoutColumnComponent, "nb-layout-column", never, { "left": "left"; "start": "start"; }, {}, never, ["*"]>;
 }
 /**
  * Page header component.
@@ -267,6 +271,8 @@ export declare class NbLayoutHeaderComponent {
      */
     set subheader(val: boolean);
     static ngAcceptInputType_subheader: NbBooleanInput;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbLayoutHeaderComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbLayoutHeaderComponent, "nb-layout-header", never, { "fixed": "fixed"; "subheader": "subheader"; }, {}, never, ["*"]>;
 }
 /**
  * Page footer.
@@ -297,4 +303,6 @@ export declare class NbLayoutFooterComponent {
      */
     set fixed(val: boolean);
     static ngAcceptInputType_fixed: NbBooleanInput;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbLayoutFooterComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbLayoutFooterComponent, "nb-layout-footer", never, { "fixed": "fixed"; }, {}, never, ["*"]>;
 }

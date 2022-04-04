@@ -1,7 +1,8 @@
-import { ElementRef, InjectionToken, OnDestroy, ChangeDetectorRef, Type } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, InjectionToken, OnDestroy, Type } from '@angular/core';
 import { ControlValueAccessor, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { NbDateService } from '../calendar-kit/services/date.service';
+import * as i0 from "@angular/core";
 /**
  * The `NbDatepickerAdapter` instances provide way how to parse, format and validate
  * different date types.
@@ -123,9 +124,13 @@ export declare const NB_DATE_SERVICE_OPTIONS: InjectionToken<unknown>;
  * @stacked-example(Forms, datepicker/datepicker-forms.component)
  *
  * `NbDatepickerDirective` may be validated using `min` and `max` dates passed to the datepicker.
- * And `filter` predicate that receives date object and has to return a boolean value.
  *
  * @stacked-example(Validation, datepicker/datepicker-validation.component)
+ *
+ * Also `NbDatepickerDirective` may be filtered using `filter` predicate
+ * that receives date object and has to return a boolean value.
+ *
+ * @stacked-example(Filter, datepicker/datepicker-filter.component)
  *
  * If you need to pick a time along with the date, you can use nb-date-timepicker
  *
@@ -294,4 +299,6 @@ export declare class NbDatepickerDirective<D> implements OnDestroy, ControlValue
      * */
     protected handleInputChange(value: string): void;
     protected parseInputValue(value: any): D | null;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbDatepickerDirective<any>, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbDatepickerDirective<any>, "input[nbDatepicker]", never, { "setPicker": "nbDatepicker"; }, {}, never>;
 }

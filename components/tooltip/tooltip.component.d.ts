@@ -3,6 +3,7 @@ import { NbComponentOrCustomStatus } from '../component-status';
 import { NbRenderableContainer } from '../cdk/overlay/overlay-container';
 import { NbPosition } from '../cdk/overlay/overlay-position';
 import { NbIconConfig } from '../icon/icon.component';
+import * as i0 from "@angular/core";
 /**
  * Tooltip container.
  * Renders provided tooltip inside.
@@ -66,4 +67,6 @@ export declare class NbTooltipComponent implements NbRenderableContainer {
      * render is handled by change detection
      */
     renderContent(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTooltipComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbTooltipComponent, "nb-tooltip", never, { "content": "content"; "position": "position"; "context": "context"; }, {}, never, never>;
 }

@@ -8,6 +8,7 @@ import { NbOverlayService } from '../cdk/overlay/overlay-service';
 import { NbTriggerStrategy, NbTriggerStrategyBuilderService } from '../cdk/overlay/overlay-trigger';
 import { NbDateService } from '../calendar-kit/services/date.service';
 import { NbCalendarTimeModelService } from '../calendar-kit/services/calendar-time-model.service';
+import * as i0 from "@angular/core";
 /**
  * The `NbTimePickerDirective` is form control that gives you ability to select a time. The timepicker
  * is shown when input receives a `focus` event.
@@ -240,4 +241,6 @@ export declare class NbTimePickerDirective<D> implements AfterViewInit, ControlV
     registerOnChange(fn: (value: any) => {}): void;
     registerOnTouched(fn: any): void;
     protected parseNativeDateString(value: string): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTimePickerDirective<any>, [null, null, null, null, null, null, null, null, null, { attribute: "placeholder"; }]>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbTimePickerDirective<any>, "input[nbTimepicker]", never, { "timepicker": "nbTimepicker"; "overlayOffset": "overlayOffset"; }, {}, never>;
 }

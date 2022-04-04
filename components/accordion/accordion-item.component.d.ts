@@ -7,6 +7,7 @@ import { ChangeDetectorRef, EventEmitter, SimpleChanges, OnInit, OnChanges, OnDe
 import { Subject } from 'rxjs';
 import { NbAccordionComponent } from './accordion.component';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 /**
  * Component intended to be used within `<nb-accordion>` component
  */
@@ -60,4 +61,6 @@ export declare class NbAccordionItemComponent implements OnInit, OnChanges, OnDe
     ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     private invalidate;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbAccordionItemComponent, [{ host: true; }, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbAccordionItemComponent, "nb-accordion-item", never, { "collapsed": "collapsed"; "expanded": "expanded"; "disabled": "disabled"; }, { "collapsedChange": "collapsedChange"; }, never, ["nb-accordion-item-header", "nb-accordion-item-body"]>;
 }

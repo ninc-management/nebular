@@ -1,11 +1,7 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { NbStatusService } from '../../services/status.service';
 import { NbComponentSize } from '../component-size';
 import { NbComponentOrCustomStatus, NbComponentStatus } from '../component-status';
+import * as i0 from "@angular/core";
 /**
  * Component intended to be used within the `<nb-card>` component.
  * It adds styles for a preset header section.
@@ -33,18 +29,24 @@ import { NbComponentOrCustomStatus, NbComponentStatus } from '../component-statu
  * card-header-control-text-color:
  */
 export declare class NbCardHeaderComponent {
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCardHeaderComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCardHeaderComponent, "nb-card-header", never, {}, {}, never, ["*"]>;
 }
 /**
  * Component intended to be used within  the `<nb-card>` component.
  * Adds styles for a preset body section.
  */
 export declare class NbCardBodyComponent {
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCardBodyComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCardBodyComponent, "nb-card-body", never, {}, {}, never, ["*"]>;
 }
 /**
  * Component intended to be used within  the `<nb-card>` component.
  * Adds styles for a preset footer section.
  */
 export declare class NbCardFooterComponent {
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCardFooterComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCardFooterComponent, "nb-card-footer", never, {}, {}, never, ["*"]>;
 }
 /**
  * Basic content container component.
@@ -167,4 +169,6 @@ export declare class NbCardComponent {
     get controlAccent(): boolean;
     get additionalClasses(): string[];
     constructor(statusService: NbStatusService);
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCardComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCardComponent, "nb-card", never, { "size": "size"; "status": "status"; "accent": "accent"; }, {}, never, ["nb-card-header", "nb-card-body", "*", "nb-card-footer"]>;
 }

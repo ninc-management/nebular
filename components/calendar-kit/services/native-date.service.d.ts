@@ -1,10 +1,6 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { DatePipe, TranslationWidth } from '@angular/common';
 import { NbDateService } from './date.service';
+import * as i0 from "@angular/core";
 /**
  * The `NbNativeDateService` is basic implementation of `NbDateService` using
  * native js date objects and angular localization services.
@@ -63,4 +59,6 @@ export declare class NbNativeDateService extends NbDateService<Date> {
     getWeekNumber(date: Date): number;
     getDateFormat(): string;
     getTwelveHoursFormat(): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbNativeDateService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbNativeDateService>;
 }

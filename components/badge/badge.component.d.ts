@@ -1,10 +1,6 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { NbStatusService } from '../../services/status.service';
 import { NbComponentOrCustomStatus } from '../component-status';
+import * as i0 from "@angular/core";
 export declare type NbBadgePhysicalPosition = 'top left' | 'top right' | 'bottom left' | 'bottom right' | 'center right' | 'center left';
 export declare type NbBadgeLogicalPosition = 'top start' | 'top end' | 'bottom start' | 'bottom end' | 'center start' | 'center end';
 export declare type NbBadgePosition = NbBadgePhysicalPosition | NbBadgeLogicalPosition;
@@ -123,4 +119,6 @@ export declare class NbBadgeComponent implements NbBadge {
     get end(): boolean;
     get center(): boolean;
     constructor(statusService: NbStatusService);
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbBadgeComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbBadgeComponent, "nb-badge", never, { "text": "text"; "position": "position"; "dotMode": "dotMode"; "status": "status"; }, {}, never, never>;
 }

@@ -1,9 +1,5 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { NbDateService } from './date.service';
+import * as i0 from "@angular/core";
 export declare class NbCalendarMonthModelService<D> {
     protected dateService: NbDateService<D>;
     constructor(dateService: NbDateService<D>);
@@ -19,4 +15,6 @@ export declare class NbCalendarMonthModelService<D> {
     private isShouldAddPrevBoundingMonth;
     private isShouldAddNextBoundingMonth;
     private createDateRangeForMonth;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCalendarMonthModelService<any>, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbCalendarMonthModelService<any>>;
 }

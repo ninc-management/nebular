@@ -7,15 +7,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.writeJSON = exports.writeText = exports.readJSON = exports.readText = void 0;
 function throwFileNotFoundError(fileName) {
-    throw new Error(fileName + " file not found in the tree.");
+    throw new Error(`${fileName} file not found in the tree.`);
 }
 /**
  * Reads specified file from the given tree
  * Throws the exception if file not found
  * */
-function readText(tree, fileName, encoding) {
-    if (encoding === void 0) { encoding = 'utf8'; }
-    var file = tree.read(fileName);
+function readText(tree, fileName, encoding = 'utf8') {
+    const file = tree.read(fileName);
     if (!file) {
         throwFileNotFoundError(fileName);
     }
@@ -25,8 +24,7 @@ exports.readText = readText;
 /**
  * Reads specified file as JSON from the given tree
  * */
-function readJSON(tree, fileName, encoding) {
-    if (encoding === void 0) { encoding = 'utf8'; }
+function readJSON(tree, fileName, encoding = 'utf8') {
     return JSON.parse(readText(tree, fileName, encoding));
 }
 exports.readJSON = readJSON;

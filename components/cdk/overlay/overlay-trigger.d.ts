@@ -1,5 +1,6 @@
 import { ComponentRef } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import * as i0 from "@angular/core";
 export declare type NbTriggerValues = 'noop' | 'click' | 'hover' | 'hint' | 'focus';
 export declare enum NbTrigger {
     NOOP = "noop",
@@ -27,11 +28,11 @@ export declare abstract class NbTriggerStrategyBase implements NbTriggerStrategy
     protected host: HTMLElement;
     protected container: () => ComponentRef<any>;
     destroy(): void;
-    protected destroyed$: Subject<unknown>;
-    protected isNotOnHostOrContainer(event: Event): boolean;
-    protected isOnHostOrContainer(event: Event): boolean;
-    protected isOnHost({ target }: Event): boolean;
-    protected isOnContainer({ target }: Event): boolean;
+    protected destroyed$: Subject<void>;
+    protected isNotOnHostOrContainer(element: Element): boolean;
+    protected isOnHostOrContainer(element: Element): boolean;
+    protected isOnHost(element: Element): boolean;
+    protected isOnContainer(element: Element): boolean;
     abstract show$: Observable<Event>;
     abstract hide$: Observable<Event>;
     constructor(document: Document, host: HTMLElement, container: () => ComponentRef<any>);
@@ -95,4 +96,6 @@ export declare class NbTriggerStrategyBuilderService {
     host(host: HTMLElement): this;
     container(container: () => ComponentRef<any>): this;
     build(): NbTriggerStrategy;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTriggerStrategyBuilderService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbTriggerStrategyBuilderService>;
 }

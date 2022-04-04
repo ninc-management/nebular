@@ -10,6 +10,7 @@ import { NbOverlayService } from '../cdk/overlay/overlay-service';
 import { NbDialogConfig } from './dialog-config';
 import { NbDialogRef } from './dialog-ref';
 import { NbDialogContainerComponent } from './dialog-container';
+import * as i0 from "@angular/core";
 /**
  * The `NbDialogService` helps to open dialogs.
  *
@@ -148,4 +149,6 @@ export declare class NbDialogService {
     protected createComponentPortal<T>(config: NbDialogConfig, content: Type<T>, dialogRef: NbDialogRef<T>): NbComponentPortal;
     protected createInjector(config: NbDialogConfig): Injector;
     protected registerCloseListeners<T>(config: NbDialogConfig, overlayRef: NbOverlayRef, dialogRef: NbDialogRef<T>): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbDialogService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbDialogService>;
 }

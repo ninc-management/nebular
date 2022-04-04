@@ -9,6 +9,7 @@ import { NbStatusService } from '../../services/status.service';
 import { NbLayoutDirectionService } from '../../services/direction.service';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 /**
  * Toggle is a control representing `on` and `off` states.
  *
@@ -298,4 +299,6 @@ export declare class NbToggleComponent implements OnInit, AfterViewInit, OnDestr
     setDisabledState(val: boolean): void;
     updateValue(event: Event): void;
     onInputClick(event: Event): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbToggleComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbToggleComponent, "nb-toggle", never, { "checked": "checked"; "disabled": "disabled"; "status": "status"; "labelPosition": "labelPosition"; }, { "checkedChange": "checkedChange"; }, never, ["*"]>;
 }

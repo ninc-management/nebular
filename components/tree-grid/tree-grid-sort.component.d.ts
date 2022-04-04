@@ -1,5 +1,6 @@
 import { EventEmitter, TemplateRef } from '@angular/core';
 import { NbBooleanInput, NbNullableInput } from '../helpers';
+import * as i0 from "@angular/core";
 /** Column definition associated with a `NbSortHeaderDirective`. */
 interface NbSortHeaderColumnDef {
     name: string;
@@ -25,6 +26,8 @@ export declare class NbSortDirective {
     static ngAcceptInputType_sortable: NbSortable | NbNullableInput;
     sort: EventEmitter<NbSortRequest>;
     emitSort(sortRequest: NbSortRequest): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSortDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbSortDirective, "[nbSort]", never, { "sortable": "nbSort"; }, { "sort": "sort"; }, never>;
 }
 export interface NbSortHeaderIconDirectiveContext {
     $implicit: NbSortDirection;
@@ -38,12 +41,16 @@ export interface NbSortHeaderIconDirectiveContext {
  * `isDescending` and `isNone` properties.
  */
 export declare class NbSortHeaderIconDirective {
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSortHeaderIconDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbSortHeaderIconDirective, "[nbSortHeaderIcon]", never, {}, {}, never>;
 }
 export declare class NbSortIconComponent {
     direction: NbSortDirection;
     isAscending(): boolean;
     isDescending(): boolean;
     isDirectionSet(): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSortIconComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbSortIconComponent, "nb-sort-icon", never, { "direction": "direction"; }, {}, never, never>;
 }
 /**
  * Marks header as sort header so it emitting sort event when clicked.
@@ -74,5 +81,7 @@ export declare class NbSortHeaderComponent {
     getDisabledAttributeValue(): '' | null;
     private createSortRequest;
     private getNextDirection;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSortHeaderComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbSortHeaderComponent, "[nbSortHeader]", never, { "direction": "nbSortHeader"; "disabled": "disabled"; }, {}, ["sortIcon"], ["*"]>;
 }
 export {};

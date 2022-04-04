@@ -7,6 +7,7 @@ import { ComponentRef, ElementRef, EmbeddedViewRef, OnDestroy, OnInit } from '@a
 import { NbComponentPortal, NbPortalOutletDirective, NbTemplatePortal } from '../cdk/overlay/mapping';
 import { NbFocusTrap, NbFocusTrapFactoryService } from '../cdk/a11y/focus-trap';
 import { NbDialogConfig } from './dialog-config';
+import * as i0 from "@angular/core";
 /**
  * Container component for each dialog.
  * All the dialogs will be attached to it.
@@ -23,4 +24,6 @@ export declare class NbDialogContainerComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void;
     attachComponentPortal<T>(portal: NbComponentPortal<T>): ComponentRef<T>;
     attachTemplatePortal<C>(portal: NbTemplatePortal<C>): EmbeddedViewRef<C>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbDialogContainerComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbDialogContainerComponent, "nb-dialog-container", never, {}, {}, never, never>;
 }

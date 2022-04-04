@@ -6,6 +6,7 @@
 import { EventEmitter } from '@angular/core';
 import { NbDateService } from '../../services/date.service';
 import { NbCalendarCell, NbCalendarSize, NbCalendarSizeValues } from '../../model';
+import * as i0 from "@angular/core";
 export declare class NbCalendarYearCellComponent<D> implements NbCalendarCell<D, D> {
     protected dateService: NbDateService<D>;
     date: D;
@@ -27,4 +28,6 @@ export declare class NbCalendarYearCellComponent<D> implements NbCalendarCell<D,
     private greaterThanMax;
     private yearStart;
     private yearEnd;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCalendarYearCellComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCalendarYearCellComponent<any>, "nb-calendar-year-cell", never, { "date": "date"; "min": "min"; "max": "max"; "selectedValue": "selectedValue"; "size": "size"; }, { "select": "select"; }, never, never>;
 }

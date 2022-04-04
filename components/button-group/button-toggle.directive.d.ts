@@ -8,6 +8,7 @@ import { Observable, Subject } from 'rxjs';
 import { NbStatusService } from '../../services/status.service';
 import { NbBooleanInput } from '../helpers';
 import { NbButton, NbButtonAppearance } from '../button/base-button';
+import * as i0 from "@angular/core";
 export declare type NbButtonToggleAppearance = Exclude<NbButtonAppearance, 'hero'>;
 export interface NbButtonToggleChange {
     source: NbButtonToggleDirective;
@@ -22,6 +23,7 @@ export declare class NbButtonToggleDirective extends NbButton {
     protected cd: ChangeDetectorRef;
     protected zone: NgZone;
     protected statusService: NbStatusService;
+    protected buttonGroup?: any;
     protected readonly _pressedChange$: Subject<NbButtonToggleChange>;
     get pressedChange$(): Observable<NbButtonToggleChange>;
     appearance: NbButtonToggleAppearance;
@@ -49,9 +51,11 @@ export declare class NbButtonToggleDirective extends NbButton {
     get control(): boolean;
     get additionalClasses(): string[];
     onClick(): void;
-    constructor(renderer: Renderer2, hostElement: ElementRef<HTMLElement>, cd: ChangeDetectorRef, zone: NgZone, statusService: NbStatusService);
+    constructor(renderer: Renderer2, hostElement: ElementRef<HTMLElement>, cd: ChangeDetectorRef, zone: NgZone, statusService: NbStatusService, buttonGroup?: any);
     /**
      * @docs-private
      */
     _updatePressed(value: boolean): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbButtonToggleDirective, [null, null, null, null, null, { optional: true; }]>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbButtonToggleDirective, "button[nbButtonToggle]", ["nbButtonToggle"], { "appearance": "appearance"; "value": "value"; "pressed": "pressed"; }, { "pressedChange": "pressedChange"; }, never>;
 }

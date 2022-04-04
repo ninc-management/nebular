@@ -1,13 +1,9 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { Location } from '@angular/common';
 import { Params, QueryParamsHandling } from '@angular/router';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { NbIconConfig } from '../icon/icon.component';
 import { NbBadge } from '../badge/badge.component';
+import * as i0 from "@angular/core";
 export interface NbMenuBag {
     tag: string;
     item: NbMenuItem;
@@ -137,6 +133,8 @@ export declare class NbMenuService {
     onItemSelect(): Observable<NbMenuBag>;
     onItemHover(): Observable<NbMenuBag>;
     onSubmenuToggle(): Observable<NbMenuBag>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbMenuService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbMenuService>;
 }
 export declare class NbMenuInternalService {
     private location;
@@ -185,4 +183,6 @@ export declare class NbMenuInternalService {
      */
     private findItemByUrl;
     private isSelectedInUrl;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbMenuInternalService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbMenuInternalService>;
 }

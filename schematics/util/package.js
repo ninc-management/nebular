@@ -6,8 +6,8 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addDevDependencyToPackageJson = exports.getDevDependencyVersionFromPackageJson = exports.addDependencyToPackageJson = exports.getDependencyVersionFromPackageJson = exports.getEvaIconsVersion = exports.getNebularPeerDependencyVersionFromPackageJson = exports.getNebularVersion = void 0;
-var file_1 = require("./file");
-var packageJsonName = 'package.json';
+const file_1 = require("./file");
+const packageJsonName = 'package.json';
 function getNebularVersion() {
     return getNebularPackageJson().version;
 }
@@ -16,7 +16,7 @@ exports.getNebularVersion = getNebularVersion;
  * Gets the version of the specified Nebular peerDependency
  * */
 function getNebularPeerDependencyVersionFromPackageJson(packageName) {
-    var packageJson = getNebularPackageJson();
+    const packageJson = getNebularPackageJson();
     if (noInfoAboutPeerDependency(packageJson, packageName)) {
         throwNoPackageInfoInPackageJson(packageName);
     }
@@ -27,8 +27,8 @@ exports.getNebularPeerDependencyVersionFromPackageJson = getNebularPeerDependenc
  * Eva Icons version
  * */
 function getEvaIconsVersion() {
-    var packageJson = getNebularEvaIconsPackageJson();
-    var packageName = 'eva-icons';
+    const packageJson = getNebularEvaIconsPackageJson();
+    const packageName = 'eva-icons';
     if (noInfoAboutPeerDependency(packageJson, packageName)) {
         throwNoPackageInfoInPackageJson(packageName);
     }
@@ -42,19 +42,18 @@ function getDependencyVersionFromPackageJson(tree, packageName) {
     if (!tree.exists(packageJsonName)) {
         throwNoPackageJsonError();
     }
-    var packageJson = file_1.readJSON(tree, packageJsonName);
+    const packageJson = (0, file_1.readJSON)(tree, packageJsonName);
     if (noInfoAboutDependency(packageJson, packageName)) {
         throwNoPackageInfoInPackageJson(packageName);
     }
     return packageJson.dependencies[packageName];
 }
 exports.getDependencyVersionFromPackageJson = getDependencyVersionFromPackageJson;
-function addDependencyToPackageJson(tree, packageName, packageVersion, force) {
-    if (force === void 0) { force = false; }
+function addDependencyToPackageJson(tree, packageName, packageVersion, force = false) {
     if (!tree.exists(packageJsonName)) {
         throwNoPackageJsonError();
     }
-    var packageJson = file_1.readJSON(tree, packageJsonName);
+    const packageJson = (0, file_1.readJSON)(tree, packageJsonName);
     if (!packageJson.dependencies) {
         packageJson.dependencies = {};
     }
@@ -62,7 +61,7 @@ function addDependencyToPackageJson(tree, packageName, packageVersion, force) {
         packageJson.dependencies[packageName] = packageVersion;
         packageJson.dependencies = sortObjectByKeys(packageJson.dependencies);
     }
-    file_1.writeJSON(tree, packageJsonName, packageJson);
+    (0, file_1.writeJSON)(tree, packageJsonName, packageJson);
 }
 exports.addDependencyToPackageJson = addDependencyToPackageJson;
 /**
@@ -72,7 +71,7 @@ function getDevDependencyVersionFromPackageJson(tree, packageName) {
     if (!tree.exists(packageJsonName)) {
         throwNoPackageJsonError();
     }
-    var packageJson = file_1.readJSON(tree, packageJsonName);
+    const packageJson = (0, file_1.readJSON)(tree, packageJsonName);
     if (noInfoAboutDevDependency(packageJson, packageName)) {
         throwNoPackageInfoInPackageJson(packageName);
     }
@@ -83,7 +82,7 @@ function addDevDependencyToPackageJson(tree, packageName, packageVersion) {
     if (!tree.exists(packageJsonName)) {
         throwNoPackageJsonError();
     }
-    var packageJson = file_1.readJSON(tree, packageJsonName);
+    const packageJson = (0, file_1.readJSON)(tree, packageJsonName);
     if (!packageJson.devDependencies) {
         packageJson.devDependencies = {};
     }
@@ -91,14 +90,14 @@ function addDevDependencyToPackageJson(tree, packageName, packageVersion) {
         packageJson.devDependencies[packageName] = packageVersion;
         packageJson.devDependencies = sortObjectByKeys(packageJson.devDependencies);
     }
-    file_1.writeJSON(tree, packageJsonName, packageJson);
+    (0, file_1.writeJSON)(tree, packageJsonName, packageJson);
 }
 exports.addDevDependencyToPackageJson = addDevDependencyToPackageJson;
 function throwNoPackageJsonError() {
     throw new Error('No package.json found in the tree.');
 }
 function throwNoPackageInfoInPackageJson(packageName) {
-    throw new Error("No info found in package.json for " + packageName);
+    throw new Error(`No info found in package.json for ${packageName}`);
 }
 /**
  * Validates packageJson has dependencies, also as specified dependency not exists.
@@ -141,7 +140,12 @@ function peerDependencyAlreadyExists(packageJson, packageName) {
  * @returns A new object instance with sorted keys
  */
 function sortObjectByKeys(obj) {
-    return Object.keys(obj).sort().reduce(function (result, key) { return (result[key] = obj[key]) && result; }, {});
+    return Object.keys(obj)
+        .sort()
+        .reduce((result, key) => {
+        result[key] = obj[key];
+        return result;
+    }, {});
 }
 function getNebularPackageJson() {
     return require('../../package.json');

@@ -14,6 +14,7 @@ import { NbComponentSize } from '../component-size';
 import { NbAutocompleteDirective } from '../autocomplete/autocomplete.directive';
 import { NbTagComponent } from './tag.component';
 import { NbTagInputDirective } from './tag-input.directive';
+import * as i0 from "@angular/core";
 /**
  *
  * `nb-tag-list` component displays a list of `nb-tag` components.
@@ -95,4 +96,6 @@ export declare class NbTagListComponent implements OnInit, AfterContentInit, Aft
     protected toggleTag(tagToToggle: NbTagComponent): void;
     protected focusInput(): void;
     protected focusInputIfActive(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTagListComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbTagListComponent, "nb-tag-list", ["nbTagList"], { "size": "size"; "tabIndex": "tabIndex"; "role": "role"; "multiple": "multiple"; }, { "tagRemove": "tagRemove"; }, ["tagInput", "autocompleteDirective", "tags"], ["nb-tag, input[nbTagInput]"]>;
 }

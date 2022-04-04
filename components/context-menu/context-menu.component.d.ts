@@ -1,10 +1,6 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { NbMenuItem } from '../../components/menu/menu.service';
 import { NbPositionedContainerComponent, NbRenderableContainer } from '../cdk/overlay/overlay-container';
+import * as i0 from "@angular/core";
 /**
  * Context menu component used as content within NbContextMenuDirective.
  *
@@ -32,4 +28,6 @@ export declare class NbContextMenuComponent extends NbPositionedContainerCompone
      * render is handled by change detection
      */
     renderContent(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbContextMenuComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbContextMenuComponent, "nb-context-menu", never, { "items": "items"; "tag": "tag"; "context": "context"; }, {}, never, never>;
 }

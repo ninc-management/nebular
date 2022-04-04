@@ -11,6 +11,7 @@ import { NbOverlayConfig, NbOverlayRef } from '../cdk/overlay/mapping';
 import { NbAdjustableConnectedPositionStrategy, NbAdjustment, NbPosition } from '../cdk/overlay/overlay-position';
 import { NbTrigger, NbTriggerValues } from '../cdk/overlay/overlay-trigger';
 import { NbMenuItem, NbMenuService } from '../menu/menu.service';
+import * as i0 from "@angular/core";
 export interface NbContextMenuContext {
     items: NbMenuItem[];
     tag: string;
@@ -161,4 +162,6 @@ export declare class NbContextMenuDirective implements NbDynamicOverlayControlle
     private validateItems;
     private subscribeOnItemClick;
     protected updateOverlayContext(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbContextMenuDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbContextMenuDirective, "[nbContextMenu]", never, { "position": "nbContextMenuPlacement"; "adjustment": "nbContextMenuAdjustment"; "tag": "nbContextMenuTag"; "items": "nbContextMenu"; "trigger": "nbContextMenuTrigger"; "contextMenuClass": "nbContextMenuClass"; }, {}, never>;
 }

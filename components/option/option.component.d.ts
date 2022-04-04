@@ -4,6 +4,7 @@ import { NbBooleanInput } from '../helpers';
 import { NbFocusableOption } from '../cdk/a11y/focus-key-manager';
 import { NbHighlightableOption } from '../cdk/a11y/descendant-key-manager';
 import { NbSelectComponent } from '../select/select.component';
+import * as i0 from "@angular/core";
 /**
  * NbOptionComponent
  *
@@ -105,4 +106,6 @@ export declare class NbOptionComponent<T = any> implements OnDestroy, AfterViewI
     getLabel(): string;
     setActiveStyles(): void;
     setInactiveStyles(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbOptionComponent<any>, [{ optional: true; }, null, null, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbOptionComponent<any>, "nb-option", never, { "value": "value"; "disabled": "disabled"; }, { "selectionChange": "selectionChange"; }, never, ["*"]>;
 }

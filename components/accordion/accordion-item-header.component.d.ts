@@ -5,6 +5,7 @@
  */
 import { OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { NbAccordionItemComponent } from './accordion-item.component';
+import * as i0 from "@angular/core";
 /**
  * Component intended to be used within `<nb-accordion-item>` component
  */
@@ -21,4 +22,6 @@ export declare class NbAccordionItemHeaderComponent implements OnInit, OnDestroy
     constructor(accordionItem: NbAccordionItemComponent, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbAccordionItemHeaderComponent, [{ host: true; }, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbAccordionItemHeaderComponent, "nb-accordion-item-header", never, {}, {}, never, ["nb-accordion-item-title", "nb-accordion-item-description", "*"]>;
 }

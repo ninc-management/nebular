@@ -1,3 +1,4 @@
+import * as i0 from "@angular/core";
 /**
  *
  * Reveal card example:
@@ -64,4 +65,6 @@ export declare class NbRevealCardComponent {
      */
     showToggleButton: boolean;
     toggle(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbRevealCardComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbRevealCardComponent, "nb-reveal-card", never, { "revealed": "revealed"; "showToggleButton": "showToggleButton"; }, {}, never, ["nb-card-front", "nb-card-back"]>;
 }

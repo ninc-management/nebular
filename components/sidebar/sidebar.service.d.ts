@@ -1,10 +1,6 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { Subject, Observable, Observer } from 'rxjs';
 import { NbSidebarResponsiveState, NbSidebarState } from './sidebar.component';
+import * as i0 from "@angular/core";
 export declare const getSidebarState$: Subject<{
     tag: string;
     observer: Observer<NbSidebarState>;
@@ -93,4 +89,6 @@ export declare class NbSidebarService {
      * to specify which sidebar responsive state you need
      */
     getSidebarResponsiveState(tag?: string): Observable<NbSidebarResponsiveState>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSidebarService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbSidebarService>;
 }

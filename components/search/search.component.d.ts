@@ -9,6 +9,7 @@ import { NbSearchService } from './search.service';
 import { NbThemeService } from '../../services/theme.service';
 import { NbOverlayService } from '../cdk/overlay/overlay-service';
 import { NbPortalDirective } from '../cdk/overlay/mapping';
+import * as i0 from "@angular/core";
 /**
  * search-field-component is used under the hood by nb-search component
  * can't be used itself
@@ -43,6 +44,8 @@ export declare class NbSearchFieldComponent implements OnChanges, AfterViewInit 
     submitSearch(term: any): void;
     emitSearchInput(term: string): void;
     focusInput(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSearchFieldComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbSearchFieldComponent, "nb-search-field", never, { "type": "type"; "placeholder": "placeholder"; "hint": "hint"; "show": "show"; }, { "close": "close"; "search": "search"; "searchInput": "searchInput"; }, never, never>;
 }
 export declare type NbSearchType = 'modal-zoomin' | 'rotate-layout' | 'modal-move' | 'curtain' | 'column-curtain' | 'modal-drop' | 'modal-half';
 /**
@@ -140,4 +143,6 @@ export declare class NbSearchComponent implements OnInit, OnDestroy {
     emitActivate(): void;
     emitDeactivate(): void;
     private removeLayoutClasses;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSearchComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbSearchComponent, "nb-search", never, { "tag": "tag"; "placeholder": "placeholder"; "hint": "hint"; "type": "type"; }, {}, never, never>;
 }

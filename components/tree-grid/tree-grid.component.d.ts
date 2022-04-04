@@ -9,6 +9,7 @@ import { NbToggleOptions } from './data-source/tree-grid.service';
 import { NbTreeGridRowComponent } from './tree-grid-row.component';
 import { NbTreeGridCellDirective } from './tree-grid-cell.component';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 /**
  * Tree grid component that can be used to display nested rows of data.
  * Supports filtering and sorting.
@@ -135,4 +136,6 @@ export declare class NbTreeGridComponent<T> extends NbTable<NbTreeGridPresentati
     private isFirstColumn;
     private checkDefsCount;
     private updateVisibleColumns;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTreeGridComponent<any>, [null, null, null, null, { attribute: "role"; }, null, null, null, null, null, null, null, { optional: true; skipSelf: true; }]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbTreeGridComponent<any>, "table[nbTreeGrid]", never, { "source": "nbTreeGrid"; "levelPadding": "levelPadding"; "equalColumnsWidth": "equalColumnsWidth"; }, {}, never, never>;
 }

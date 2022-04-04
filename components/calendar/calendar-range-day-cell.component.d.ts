@@ -8,6 +8,7 @@ import { NbCalendarCell, NbCalendarSize, NbCalendarSizeValues } from '../calenda
 import { NbCalendarRange } from './calendar-range.component';
 import { NbDateService } from '../calendar-kit/services/date.service';
 import { NbBaseCalendarRangeCell } from './base-calendar-range-cell';
+import * as i0 from "@angular/core";
 export declare class NbCalendarRangeDayCellComponent<D> extends NbBaseCalendarRangeCell<D> implements NbCalendarCell<D, NbCalendarRange<D>> {
     protected dateService: NbDateService<D>;
     date: D;
@@ -37,4 +38,6 @@ export declare class NbCalendarRangeDayCellComponent<D> extends NbBaseCalendarRa
     protected greaterThanMax(): boolean;
     protected dontFitFilter(): boolean;
     protected isInRange(date: D, { start, end }: NbCalendarRange<D>): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCalendarRangeDayCellComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCalendarRangeDayCellComponent<any>, "nb-calendar-range-day-cell", never, { "date": "date"; "selectedValue": "selectedValue"; "visibleDate": "visibleDate"; "min": "min"; "max": "max"; "filter": "filter"; "size": "size"; }, { "select": "select"; }, never, never>;
 }

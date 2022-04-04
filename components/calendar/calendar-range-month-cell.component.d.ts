@@ -8,6 +8,7 @@ import { NbCalendarCell, NbCalendarSize, NbCalendarSizeValues } from '../calenda
 import { NbDateService } from '../calendar-kit/services/date.service';
 import { NbCalendarRange } from './calendar-range.component';
 import { NbBaseCalendarRangeCell } from './base-calendar-range-cell';
+import * as i0 from "@angular/core";
 export declare class NbCalendarRangeMonthCellComponent<D> extends NbBaseCalendarRangeCell<D> implements NbCalendarCell<D, NbCalendarRange<D>> {
     protected dateService: NbDateService<D>;
     get month(): string;
@@ -35,4 +36,6 @@ export declare class NbCalendarRangeMonthCellComponent<D> extends NbBaseCalendar
     protected monthStart(): D;
     protected monthEnd(): D;
     protected isInRage(date: D, range: NbCalendarRange<D>): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCalendarRangeMonthCellComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCalendarRangeMonthCellComponent<any>, "nb-calendar-range-month-cell", never, { "date": "date"; "visibleDate": "visibleDate"; "selectedValue": "selectedValue"; "min": "min"; "max": "max"; "size": "size"; }, { "select": "select"; }, never, never>;
 }

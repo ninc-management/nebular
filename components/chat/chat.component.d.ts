@@ -10,6 +10,8 @@ import { NbComponentOrCustomStatus } from '../component-status';
 import { NbBooleanInput } from '../helpers';
 import { NbChatFormComponent } from './chat-form.component';
 import { NbChatMessageComponent } from './chat-message.component';
+import { NbChatTitleDirective } from './chat-title.directive';
+import * as i0 from "@angular/core";
 /**
  * Conversational UI collection - a set of components for chat-like UI construction.
  *
@@ -83,6 +85,9 @@ import { NbChatMessageComponent } from './chat-message.component';
  * <nb-chat-message>
  * </nb-chat-message> // chat message, available multiple types
  * ```
+ *
+ * You could provide a title template via the `nbChatTitle` directive. It overrides `title` input.
+ * @stacked-example(Custom template as a title, chat/chat-template-title.component)
  *
  * Two users conversation showcase:
  * @stacked-example(Conversation, chat/chat-conversation-showcase.component)
@@ -240,6 +245,7 @@ export declare class NbChatComponent implements OnChanges, AfterContentInit, Aft
     scrollable: ElementRef;
     messages: QueryList<NbChatMessageComponent>;
     chatForm: NbChatFormComponent;
+    titleTemplate: NbChatTitleDirective;
     constructor(statusService: NbStatusService);
     ngOnChanges(changes: SimpleChanges): void;
     ngAfterContentInit(): void;
@@ -260,4 +266,6 @@ export declare class NbChatComponent implements OnChanges, AfterContentInit, Aft
     get basic(): boolean;
     get control(): boolean;
     get additionalClasses(): string[];
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbChatComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbChatComponent, "nb-chat", never, { "title": "title"; "size": "size"; "status": "status"; "noMessagesPlaceholder": "noMessagesPlaceholder"; "scrollBottom": "scrollBottom"; }, {}, ["chatForm", "titleTemplate", "messages"], ["nb-chat-message", "nb-chat-form"]>;
 }

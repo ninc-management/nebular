@@ -1,11 +1,13 @@
 import { ElementRef } from '@angular/core';
+import { GlobalPositionStrategy } from '@angular/cdk/overlay';
 import { Observable } from 'rxjs';
 import { NbConnectedPosition, NbFlexibleConnectedPositionStrategy, NbOverlayPositionBuilder, NbOverlayRef, NbPositionStrategy } from './mapping';
 import { NbPlatform } from '../platform/platform-service';
 import { NbOverlayContainerAdapter } from '../adapter/overlay-container-adapter';
 import { NbViewportRulerAdapter } from '../adapter/viewport-ruler-adapter';
 import { NbGlobalLogicalPosition } from './position-helper';
-import { GlobalPositionStrategy } from '@angular/cdk/overlay';
+import { NbLayoutDirection } from '../../../services/direction.service';
+import * as i0 from "@angular/core";
 export declare type NbAdjustmentValues = 'noop' | 'clockwise' | 'counterclockwise' | 'vertical' | 'horizontal';
 export declare enum NbAdjustment {
     NOOP = "noop",
@@ -39,21 +41,23 @@ export declare class NbAdjustableConnectedPositionStrategy extends NbFlexibleCon
     protected _position: NbPosition;
     protected _offset: number;
     protected _adjustment: NbAdjustment;
+    protected _direction: NbLayoutDirection | undefined;
     protected appliedPositions: {
         key: NbPosition;
         connectedPosition: NbConnectedPosition;
     }[];
     readonly positionChange: Observable<NbPosition>;
     attach(overlayRef: NbOverlayRef): void;
+    direction(direction: NbLayoutDirection): this;
     apply(): void;
     position(position: NbPosition): this;
     adjustment(adjustment: NbAdjustment): this;
     offset(offset: number): this;
     protected applyPositions(): void;
     protected createPositions(): NbPosition[];
+    protected mapToLogicalPosition(position: NbPosition): NbPosition;
     protected persistChosenPositions(positions: NbPosition[]): void;
     protected reorderPreferredPositions(positions: NbPosition[]): NbPosition[];
-    protected mapToLogicalPosition(position: NbPosition): NbPosition;
 }
 export declare class NbGlobalPositionStrategy extends GlobalPositionStrategy {
     position(position: NbGlobalLogicalPosition): this;
@@ -67,4 +71,6 @@ export declare class NbPositionBuilderService {
     constructor(document: any, viewportRuler: NbViewportRulerAdapter, platform: NbPlatform, positionBuilder: NbOverlayPositionBuilder, overlayContainer: NbOverlayContainerAdapter);
     global(): NbGlobalPositionStrategy;
     connectedTo(elementRef: ElementRef): NbAdjustableConnectedPositionStrategy;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbPositionBuilderService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbPositionBuilderService>;
 }

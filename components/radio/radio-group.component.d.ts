@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { NbBooleanInput } from '../helpers';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbRadioComponent } from './radio.component';
+import * as i0 from "@angular/core";
 /**
  * The `NbRadioGroupComponent` is the wrapper for `nb-radio` button.
  * It provides form bindings:
@@ -87,4 +88,6 @@ export declare class NbRadioGroupComponent implements AfterContentInit, OnDestro
     protected updateStatus(): void;
     protected updateAndMarkForCheckRadios(updateFn: (NbRadioComponent: any) => void): void;
     protected updateValueFromCheckedOption(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbRadioGroupComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbRadioGroupComponent, "nb-radio-group", never, { "value": "value"; "name": "name"; "disabled": "disabled"; "status": "status"; }, { "valueChange": "valueChange"; }, ["radios"], ["nb-radio"]>;
 }

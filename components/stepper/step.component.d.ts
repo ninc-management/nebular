@@ -1,6 +1,7 @@
 import { TemplateRef } from '@angular/core';
 import { NbStepperComponent } from './stepper.component';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 /**
  * Component intended to be used within  the `<nb-stepper>` component.
  * Container for a step
@@ -61,4 +62,6 @@ export declare class NbStepComponent {
      * Reset step and stepControl state
      * */
     reset(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbStepComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbStepComponent, "nb-step", never, { "stepControl": "stepControl"; "label": "label"; "hidden": "hidden"; "completed": "completed"; }, {}, never, ["*"]>;
 }

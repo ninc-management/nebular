@@ -2,6 +2,7 @@ import { ChangeDetectorRef, EventEmitter, ElementRef, Renderer2 } from '@angular
 import { NbStatusService } from '../../services/status.service';
 import { NbBooleanInput } from '../helpers';
 import { NbComponentOrCustomStatus } from '../component-status';
+import * as i0 from "@angular/core";
 /**
  * The `NbRadioComponent` provides the same functionality as native `<input type="radio">`
  * with Nebular styles and animations.
@@ -227,4 +228,6 @@ export declare class NbRadioComponent {
     onClick(event: Event): void;
     _markForCheck(): void;
     _setName(name: string): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbRadioComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbRadioComponent, "nb-radio", never, { "name": "name"; "checked": "checked"; "value": "value"; "disabled": "disabled"; "status": "status"; }, { "valueChange": "valueChange"; "blur": "blur"; }, never, ["*"]>;
 }

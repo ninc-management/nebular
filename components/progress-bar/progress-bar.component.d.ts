@@ -1,11 +1,7 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { NbStatusService } from '../../services/status.service';
 import { NbComponentSize } from '../component-size';
 import { NbComponentOrCustomStatus } from '../component-status';
+import * as i0 from "@angular/core";
 /**
  * Progress Bar is a component for indicating progress.
  *
@@ -122,4 +118,6 @@ export declare class NbProgressBarComponent {
     get control(): boolean;
     get additionalClasses(): string[];
     constructor(statusService: NbStatusService);
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbProgressBarComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbProgressBarComponent, "nb-progress-bar", never, { "value": "value"; "status": "status"; "size": "size"; "displayValue": "displayValue"; }, {}, never, ["*"]>;
 }

@@ -5,6 +5,7 @@
  */
 import { ComponentFactoryResolver } from '@angular/core';
 import { NbOverlayContainerComponent, NbPositionedContainerComponent, NbRenderableContainer } from '../cdk/overlay/overlay-container';
+import * as i0 from "@angular/core";
 /**
  * Overlay container.
  * Renders provided content inside.
@@ -35,4 +36,6 @@ export declare class NbPopoverComponent extends NbPositionedContainerComponent i
     protected attachTemplate(): void;
     protected attachComponent(): void;
     protected attachString(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbPopoverComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbPopoverComponent, "nb-popover", never, { "content": "content"; "context": "context"; "cfr": "cfr"; }, {}, never, never>;
 }

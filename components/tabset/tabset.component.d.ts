@@ -1,14 +1,12 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
-import { EventEmitter, QueryList, AfterContentInit, ChangeDetectorRef } from '@angular/core';
+import { EventEmitter, QueryList, AfterContentInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NbBooleanInput } from '../helpers';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbBadgePosition } from '../badge/badge.component';
 import { NbIconConfig } from '../icon/icon.component';
+import { NbTabContentDirective } from './tab-content.directive';
+import { NbTabTitleDirective } from './tab-title.directive';
+import * as i0 from "@angular/core";
 /**
  * Specific tab container.
  *
@@ -18,9 +16,11 @@ import { NbIconConfig } from '../icon/icon.component';
  *   badgeStatus="danger">
  *   <p>List of <strong>users</strong>.</p>
  * </nb-tab>
- ```
+ * ```
  */
 export declare class NbTabComponent {
+    tabContentDirective: NbTabContentDirective;
+    tabTitleDirective: NbTabTitleDirective;
     /**
      * Tab title
      * @type {string}
@@ -58,6 +58,10 @@ export declare class NbTabComponent {
     set responsive(val: boolean);
     get responsive(): boolean;
     static ngAcceptInputType_responsive: NbBooleanInput;
+    /**
+     * Makes this tab a link that initiates navigation to a route
+     * @type string
+     */
     route: string;
     activeValue: boolean;
     responsiveValue: boolean;
@@ -71,8 +75,9 @@ export declare class NbTabComponent {
     static ngAcceptInputType_active: NbBooleanInput;
     /**
      * Lazy load content before tab selection
-     * TODO: rename, as lazy is by default, and this is more `instant load`
-     * @param {boolean} val
+     * @docs-private
+     * @deprecated This setting never worked. Wrap content into a `nbTabContent` to make it lazy.
+     * @breaking-change Remove 10.0.0
      */
     set lazyLoad(val: boolean);
     static ngAcceptInputType_lazyLoad: NbBooleanInput;
@@ -95,7 +100,14 @@ export declare class NbTabComponent {
      * @type string
      */
     badgePosition: NbBadgePosition;
+    /**
+     * @deprecated
+     * @breaking-change Remove 10.0.0
+     * @docs-private
+     */
     init: boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTabComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbTabComponent, "nb-tab", never, { "tabTitle": "tabTitle"; "tabId": "tabId"; "badgeDot": "badgeDot"; "tabIcon": "tabIcon"; "disabled": "disabled"; "responsive": "responsive"; "route": "route"; "active": "active"; "lazyLoad": "lazyLoad"; "badgeText": "badgeText"; "badgeStatus": "badgeStatus"; "badgePosition": "badgePosition"; }, {}, ["tabContentDirective", "tabTitleDirective"], ["*"]>;
 }
 /**
  *
@@ -137,13 +149,31 @@ export declare class NbTabComponent {
  *
  * `tabIcon` should be used to add an icon to the tab. Icon can also be combined with title.
  * `responsive` tab property if set allows you to hide the title on smaller screens
- * (`tabs-icon-only-max-width` property) for better responsive behaviour. You can open the following example and make
+ * (`$tabset-tab-text-hide-breakpoint` variable) for better responsive behaviour.
+ * You can open the following example and make
  * your screen smaller - titles will be hidden in the last tabset in the list:
- *
  * @stacked-example(Icon, tabset/tabset-icon.component)
  *
  * It is also possible to disable a tab using `disabled` property:
  * @stacked-example(Disabled Tab, tabset/tabset-disabled.component)
+ *
+ * By default, the tab contents instantiated straightaway. To make tab contents load lazy,
+ * declare the body of a tab in a template with `nbTabContent` directive.
+ * ```html
+ * <nb-tabset>
+ *   <nb-tab>
+ *     <some-component *nbTabContent>Lazy content</some-component>
+ *   </nb-tab>
+ *   <nb-tab>
+ *     <ng-template nbTabContent>
+ *       Lazy content with template syntax
+ *     </ng-template>
+ *   </nb-tab>
+ * </nb-tabset>
+ * ```
+ *
+ * You can provide a template as a tab title via `<ng-template nbTabTitle>`:
+ * @stacked-example(Tab title template, tabset/tabset-template-title.component)
  *
  * @styles
  *
@@ -185,9 +215,8 @@ export declare class NbTabComponent {
  * tabset-scrollbar-color:
  * tabset-scrollbar-background-color:
  * tabset-scrollbar-width:
- * tabset-tab-text-hide-breakpoint:
  */
-export declare class NbTabsetComponent implements AfterContentInit {
+export declare class NbTabsetComponent implements AfterContentInit, OnDestroy {
     private route;
     private changeDetectorRef;
     tabs: QueryList<NbTabComponent>;
@@ -208,7 +237,11 @@ export declare class NbTabsetComponent implements AfterContentInit {
      * @type EventEmitter<any>
      */
     changeTab: EventEmitter<any>;
+    private destroy$;
     constructor(route: ActivatedRoute, changeDetectorRef: ChangeDetectorRef);
     ngAfterContentInit(): void;
+    ngOnDestroy(): void;
     selectTab(selectedTab: NbTabComponent): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTabsetComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbTabsetComponent, "nb-tabset", never, { "fullWidth": "fullWidth"; "routeParam": "routeParam"; }, { "changeTab": "changeTab"; }, ["tabs"], ["nb-tab"]>;
 }

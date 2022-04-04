@@ -7,8 +7,9 @@ import { TemplateRef } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { NbBooleanInput } from '../helpers';
 import { NbChatMessageFile } from './chat-message-file.component';
-import { NbCustomMessageService } from './custom-message.service';
+import { NbChatCustomMessageService } from './chat-custom-message.service';
 import { NbChatCustomMessageDirective } from './chat-custom-message.directive';
+import * as i0 from "@angular/core";
 /**
  * Chat message component.
  *
@@ -55,7 +56,7 @@ import { NbChatCustomMessageDirective } from './chat-custom-message.directive';
  */
 export declare class NbChatMessageComponent {
     protected domSanitizer: DomSanitizer;
-    protected customMessageService: NbCustomMessageService;
+    protected customMessageService: NbChatCustomMessageService;
     protected readonly builtInMessageTypes: string[];
     avatarStyle: SafeStyle;
     get _addReplyClass(): boolean;
@@ -124,7 +125,7 @@ export declare class NbChatMessageComponent {
      * @type {any}
      */
     customMessageData: any;
-    constructor(domSanitizer: DomSanitizer, customMessageService: NbCustomMessageService);
+    constructor(domSanitizer: DomSanitizer, customMessageService: NbChatCustomMessageService);
     getInitials(): string;
     _isBuiltInMessageType(): boolean;
     _getTemplate(): TemplateRef<any>;
@@ -134,4 +135,6 @@ export declare class NbChatMessageComponent {
     };
     _areDefaultStylesEnabled(): boolean;
     protected getCustomMessage(type: string): NbChatCustomMessageDirective;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbChatMessageComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbChatMessageComponent, "nb-chat-message", never, { "reply": "reply"; "message": "message"; "sender": "sender"; "date": "date"; "dateFormat": "dateFormat"; "files": "files"; "quote": "quote"; "latitude": "latitude"; "longitude": "longitude"; "avatar": "avatar"; "type": "type"; "customMessageData": "customMessageData"; }, {}, never, never>;
 }

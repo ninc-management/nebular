@@ -8,6 +8,7 @@ import { NbCalendarYearModelService } from '../calendar-kit/services/calendar-ye
 import { NbCalendarCell, NbCalendarSize, NbCalendarViewMode, NbCalendarSizeValues, NbCalendarViewModeValues } from '../calendar-kit/model';
 import { NbDateService } from '../calendar-kit/services/date.service';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 /**
  * The basis for calendar and range calendar components.
  * Encapsulates common behavior - store calendar state and perform navigation
@@ -99,4 +100,6 @@ export declare class NbBaseCalendarComponent<D, T> implements OnInit {
     private changeVisibleMonth;
     private changeVisibleYear;
     private changeVisibleYears;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbBaseCalendarComponent<any, any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbBaseCalendarComponent<any, any>, "nb-base-calendar", never, { "boundingMonth": "boundingMonth"; "activeViewMode": "startView"; "min": "min"; "max": "max"; "filter": "filter"; "dayCellComponent": "dayCellComponent"; "monthCellComponent": "monthCellComponent"; "yearCellComponent": "yearCellComponent"; "size": "size"; "visibleDate": "visibleDate"; "showNavigation": "showNavigation"; "date": "date"; "showWeekNumber": "showWeekNumber"; "weekNumberSymbol": "weekNumberSymbol"; }, { "dateChange": "dateChange"; }, never, never>;
 }

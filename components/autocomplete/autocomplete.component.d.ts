@@ -10,6 +10,7 @@ import { NbComponentSize } from '../component-size';
 import { NbPosition } from '../cdk/overlay/overlay-position';
 import { NbOptionComponent } from '../option/option.component';
 import { NbPortalDirective } from '../cdk/overlay/mapping';
+import * as i0 from "@angular/core";
 /**
  * The `NbAutocompleteComponent` overlay component.
  * Provides an `NbOptionList` overlay component.
@@ -40,7 +41,7 @@ export declare class NbAutocompleteComponent<T> implements AfterContentInit, OnD
     /**
      * Function passed as input to process each string option value before render.
      * */
-    handleDisplayFn: ((value: any) => string);
+    handleDisplayFn: (value: any) => string;
     /**
      * Autocomplete size, available sizes:
      * `tiny`, `small`, `medium` (default), `large`, `giant`
@@ -59,12 +60,18 @@ export declare class NbAutocompleteComponent<T> implements AfterContentInit, OnD
      * */
     optionsPanelClass: string | string[];
     /**
+     * Specifies width (in pixels) to be set on `nb-option`s container (`nb-option-list`)
+     * */
+    get optionsWidth(): number;
+    set optionsWidth(value: number);
+    protected _optionsWidth: number | undefined;
+    /**
      * Will be emitted when selected value changes.
      * */
     selectedChange: EventEmitter<T>;
     /**
-      * List of `NbOptionComponent`'s components passed as content.
-    * */
+     * List of `NbOptionComponent`'s components passed as content.
+     * */
     options: QueryList<NbOptionComponent<T>>;
     /**
      * NbOptionList with options content.
@@ -87,4 +94,6 @@ export declare class NbAutocompleteComponent<T> implements AfterContentInit, OnD
     get medium(): boolean;
     get large(): boolean;
     get giant(): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbAutocompleteComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbAutocompleteComponent<any>, "nb-autocomplete", never, { "handleDisplayFn": "handleDisplayFn"; "size": "size"; "activeFirst": "activeFirst"; "optionsListClass": "optionsListClass"; "optionsPanelClass": "optionsPanelClass"; "optionsWidth": "optionsWidth"; }, { "selectedChange": "selectedChange"; }, ["options"], ["nb-option, nb-option-group"]>;
 }

@@ -5,6 +5,7 @@ import { NbBlockScrollStrategyAdapter } from '../cdk/adapter/block-scroll-strate
 import { NbWindowConfig } from './window.options';
 import { NbWindowRef } from './window-ref';
 import { NbWindowComponent } from './window.component';
+import * as i0 from "@angular/core";
 /**
  * The `NbWindowService` can be used to open windows.
  *
@@ -68,6 +69,11 @@ import { NbWindowComponent } from './window.component';
  *
  * @stacked-example(Window content from TemplateRef, window/template-window.component)
  *
+ * You could pass the optional window return value to the `NbWindowRef.close` method.
+ * The passed value would be emitted to the `NbWindowRef.onClose` listeners.
+ *
+ * @stacked-example(Result, window/window-result.component)
+ *
  * ### Configuration
  *
  * As mentioned above, `open` method of the `NbWindowService` may receive optional configuration options.
@@ -103,4 +109,6 @@ export declare class NbWindowService {
     protected appendWindow(content: TemplateRef<any> | NbComponentType, config: NbWindowConfig, windowRef: NbWindowRef): ComponentRef<NbWindowComponent>;
     protected subscribeToEvents(windowRef: NbWindowRef): void;
     protected checkAndUpdateOverlay(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbWindowService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbWindowService>;
 }

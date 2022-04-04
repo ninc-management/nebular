@@ -8,6 +8,7 @@ import { Subject } from 'rxjs';
 import { NbBooleanInput } from '../helpers';
 import { NbThemeService } from '../../services/theme.service';
 import { NbSidebarService } from './sidebar.service';
+import * as i0 from "@angular/core";
 export declare type NbSidebarState = 'expanded' | 'collapsed' | 'compacted';
 export declare type NbSidebarResponsiveState = 'mobile' | 'tablet' | 'pc';
 /**
@@ -17,6 +18,8 @@ export declare type NbSidebarResponsiveState = 'mobile' | 'tablet' | 'pc';
  * placed at the very top of the sidebar outside of the scroll area.
  */
 export declare class NbSidebarHeaderComponent {
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSidebarHeaderComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbSidebarHeaderComponent, "nb-sidebar-header", never, {}, {}, never, ["*"]>;
 }
 /**
  * Sidebar footer container.
@@ -25,6 +28,8 @@ export declare class NbSidebarHeaderComponent {
  * placed at the very bottom of the sidebar outside of the scroll area.
  */
 export declare class NbSidebarFooterComponent {
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSidebarFooterComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbSidebarFooterComponent, "nb-sidebar-footer", never, {}, {}, never, ["*"]>;
 }
 /**
  * Layout sidebar component.
@@ -228,39 +233,6 @@ export declare class NbSidebarComponent implements OnInit, OnDestroy {
     protected subscribeToMediaQueryChange(): void;
     protected getMenuLink(element: HTMLElement): HTMLElement | undefined;
     protected updateState(state: NbSidebarState): void;
-    /**
-     * @deprecated Use `responsive` property instead
-     * @breaking-change Remove @8.0.0
-     */
-    toggleResponsive(enabled: boolean): void;
-    /**
-     * @deprecated Use NbSidebarState type instead
-     * @breaking-change Remove @8.0.0
-     */
-    static readonly STATE_EXPANDED: string;
-    /**
-     * @deprecated Use NbSidebarState type instead
-     * @breaking-change Remove @8.0.0
-     */
-    static readonly STATE_COLLAPSED: string;
-    /**
-     * @deprecated Use NbSidebarState type instead
-     * @breaking-change Remove @8.0.0
-     */
-    static readonly STATE_COMPACTED: string;
-    /**
-     * @deprecated Use NbSidebarResponsiveState type instead
-     * @breaking-change Remove @8.0.0
-     */
-    static readonly RESPONSIVE_STATE_MOBILE: string;
-    /**
-     * @deprecated Use NbSidebarResponsiveState type instead
-     * @breaking-change Remove @8.0.0
-     */
-    static readonly RESPONSIVE_STATE_TABLET: string;
-    /**
-     * @deprecated Use NbSidebarResponsiveState type instead
-     * @breaking-change Remove @8.0.0
-     */
-    static readonly RESPONSIVE_STATE_PC: string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbSidebarComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbSidebarComponent, "nb-sidebar", never, { "right": "right"; "left": "left"; "start": "start"; "end": "end"; "fixed": "fixed"; "containerFixed": "containerFixed"; "state": "state"; "responsive": "responsive"; "tag": "tag"; "compactedBreakpoints": "compactedBreakpoints"; "collapsedBreakpoints": "collapsedBreakpoints"; }, { "stateChange": "stateChange"; "responsiveStateChange": "responsiveStateChange"; }, never, ["nb-sidebar-header", "*", "nb-sidebar-footer"]>;
 }

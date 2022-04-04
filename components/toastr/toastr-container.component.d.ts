@@ -9,6 +9,7 @@ import { NbToastComponent } from './toast.component';
 import { NbToast } from './model';
 import { NbLayoutDirectionService } from '../../services/direction.service';
 import { NbGlobalPosition, NbPositionHelper } from '../cdk/overlay/position-helper';
+import * as i0 from "@angular/core";
 export declare class NbToastrContainerComponent implements OnInit, OnDestroy {
     protected layoutDirection: NbLayoutDirectionService;
     protected positionHelper: NbPositionHelper;
@@ -22,4 +23,6 @@ export declare class NbToastrContainerComponent implements OnInit, OnDestroy {
     ngOnInit(): void;
     ngOnDestroy(): void;
     protected onDirectionChange(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbToastrContainerComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbToastrContainerComponent, "nb-toastr-container", never, { "content": "content"; "context": "context"; "position": "position"; }, {}, never, never>;
 }

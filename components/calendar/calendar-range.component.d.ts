@@ -7,6 +7,7 @@ import { EventEmitter, Type } from '@angular/core';
 import { NbCalendarCell, NbCalendarSize, NbCalendarViewMode, NbCalendarSizeValues, NbCalendarViewModeValues } from '../calendar-kit/model';
 import { NbDateService } from '../calendar-kit/services/date.service';
 import { NbBooleanInput } from '../helpers';
+import * as i0 from "@angular/core";
 export interface NbCalendarRange<D> {
     start: D;
     end?: D;
@@ -227,4 +228,6 @@ export declare class NbCalendarRangeComponent<D> {
     private selectStart;
     private selectEnd;
     private selectRange;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbCalendarRangeComponent<any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NbCalendarRangeComponent<any>, "nb-calendar-range", never, { "boundingMonth": "boundingMonth"; "startView": "startView"; "min": "min"; "max": "max"; "filter": "filter"; "_cellComponent": "dayCellComponent"; "_monthCellComponent": "monthCellComponent"; "monthCellComponent": "monthCellComponent"; "_yearCellComponent": "yearCellComponent"; "size": "size"; "visibleDate": "visibleDate"; "showNavigation": "showNavigation"; "range": "range"; "showWeekNumber": "showWeekNumber"; "weekNumberSymbol": "weekNumberSymbol"; }, { "rangeChange": "rangeChange"; }, never, never>;
 }

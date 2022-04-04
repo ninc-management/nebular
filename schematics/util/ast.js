@@ -6,17 +6,17 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAppModulePath = exports.isImportedInMainModule = void 0;
-var core_1 = require("@angular-devkit/core");
-var schematics_1 = require("@angular/cdk/schematics");
-var ng_ast_utils_1 = require("@schematics/angular/utility/ng-ast-utils");
+const core_1 = require("@angular-devkit/core");
+const schematics_1 = require("@angular/cdk/schematics");
+const ng_ast_utils_1 = require("@schematics/angular/utility/ng-ast-utils");
 function isImportedInMainModule(tree, project, moduleName) {
-    var appModulePath = getAppModulePath(tree, schematics_1.getProjectMainFile(project));
-    return schematics_1.hasNgModuleImport(tree, appModulePath, moduleName);
+    const appModulePath = getAppModulePath(tree, (0, schematics_1.getProjectMainFile)(project));
+    return (0, schematics_1.hasNgModuleImport)(tree, appModulePath, moduleName);
 }
 exports.isImportedInMainModule = isImportedInMainModule;
 function getAppModulePath(host, mainPath) {
-    var moduleRelativePath = ng_ast_utils_1.findBootstrapModulePath(host, mainPath);
-    var mainDir = core_1.dirname(mainPath);
-    return core_1.normalize("/" + mainDir + "/" + moduleRelativePath + ".ts");
+    const moduleRelativePath = (0, ng_ast_utils_1.findBootstrapModulePath)(host, mainPath);
+    const mainDir = (0, core_1.dirname)(mainPath);
+    return (0, core_1.normalize)(`/${mainDir}/${moduleRelativePath}.ts`);
 }
 exports.getAppModulePath = getAppModulePath;

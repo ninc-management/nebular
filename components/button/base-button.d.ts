@@ -1,12 +1,13 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, Renderer2 } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, QueryList, Renderer2 } from '@angular/core';
 import { NbStatusService } from '../../services/status.service';
 import { NbBooleanInput } from '../helpers';
 import { NbComponentSize } from '../component-size';
 import { NbComponentOrCustomStatus } from '../component-status';
 import { NbComponentShape } from '../component-shape';
+import * as i0 from "@angular/core";
 export declare type NbButtonAppearance = 'filled' | 'outline' | 'ghost' | 'hero';
 export declare type NbButtonProperties = Pick<NbButton, 'appearance' | 'size' | 'shape' | 'status' | 'disabled'> & Object;
-export declare abstract class NbButton implements AfterViewInit {
+export declare abstract class NbButton implements AfterContentChecked, AfterViewInit {
     protected renderer: Renderer2;
     protected hostElement: ElementRef<HTMLElement>;
     protected cd: ChangeDetectorRef;
@@ -75,14 +76,20 @@ export declare abstract class NbButton implements AfterViewInit {
     get rectangle(): boolean;
     get round(): boolean;
     get semiRound(): boolean;
-    get iconLeft(): boolean;
-    get iconRight(): boolean;
+    iconLeft: boolean;
+    iconRight: boolean;
     get additionalClasses(): string[];
+    icons: QueryList<ElementRef>;
     protected constructor(renderer: Renderer2, hostElement: ElementRef<HTMLElement>, cd: ChangeDetectorRef, zone: NgZone, statusService: NbStatusService);
+    ngAfterContentChecked(): void;
     ngAfterViewInit(): void;
     /**
      * @docs-private
      **/
     updateProperties(config: Partial<NbButtonProperties>): void;
     get iconElement(): Element;
+    protected get nodes(): Node[];
+    protected isIconExist(node: Node): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbButton, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbButton, never, never, { "size": "size"; "status": "status"; "shape": "shape"; "appearance": "appearance"; "filled": "filled"; "outline": "outline"; "ghost": "ghost"; "fullWidth": "fullWidth"; "disabled": "disabled"; "tabIndex": "tabIndex"; }, {}, ["icons"]>;
 }

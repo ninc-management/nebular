@@ -8,6 +8,7 @@ import { Subject } from 'rxjs';
 import { NbStatusService } from '../../services/status.service';
 import { NbFocusMonitor } from '../cdk/a11y/a11y.module';
 import { NbInputDirective } from '../input/input.directive';
+import * as i0 from "@angular/core";
 export interface NbTagInputAddEvent {
     input: ElementRef<HTMLInputElement>;
     value: string;
@@ -54,4 +55,6 @@ export declare class NbTagInputDirective extends NbInputDirective implements Aft
     constructor(_hostElement: ElementRef<HTMLInputElement>, focusMonitor: NbFocusMonitor, renderer: Renderer2, zone: NgZone, statusService: NbStatusService);
     ngAfterViewInit(): void;
     protected isSeparatorKey(keyCode: number): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbTagInputDirective, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NbTagInputDirective, "input[nbTagInput]", ["nbTagInput"], { "separatorKeys": "separatorKeys"; }, { "tagAdd": "tagAdd"; }, never>;
 }

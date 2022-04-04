@@ -1,10 +1,6 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { NbFontIconPackParams, NbIconPack, NbIconPackParams, NbIcons } from './icon-pack';
 import { NbFontIcon, NbIcon, NbSvgIcon } from './icon';
+import * as i0 from "@angular/core";
 export declare class NbIconDefinition {
     name: string;
     type: string;
@@ -69,4 +65,6 @@ export declare class NbIconLibraries {
     protected getPackOrThrow(name: string): NbIconPack;
     protected getDefaultPackOrThrow(): NbIconPack;
     protected getIconFromPack(name: string, pack: NbIconPack): NbIcon | string | null;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbIconLibraries, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbIconLibraries>;
 }

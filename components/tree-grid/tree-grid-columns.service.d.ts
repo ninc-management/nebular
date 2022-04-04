@@ -1,5 +1,6 @@
 import { IterableDiffers } from '@angular/core';
 import { Observable } from 'rxjs';
+import * as i0 from "@angular/core";
 export declare class NbColumnsService {
     private differs;
     private allColumns;
@@ -14,4 +15,6 @@ export declare class NbColumnsService {
     showColumn(column: string): void;
     onColumnsChange(): Observable<void>;
     private findInsertIndex;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NbColumnsService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NbColumnsService>;
 }
