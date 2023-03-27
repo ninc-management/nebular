@@ -79,7 +79,7 @@ import { NbAutocompleteComponent } from './autocomplete.component';
  *
  * */
 @Directive({
-  selector: 'input[nbAutocomplete]',
+  selector: 'input[nbAutocomplete], textarea[nbAutocomplete]',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
