@@ -169,7 +169,7 @@ export class NbReactiveFormSelectComponent {
   template: `
     <nb-layout>
       <nb-layout-column>
-        <nb-select [(ngModel)]="selectedValue">
+        <nb-select [(ngModel)]="selectedValue" [multiple]="multiple">
           <nb-option *ngFor="let option of options" [value]="option">{{ option }}</nb-option>
         </nb-select>
       </nb-layout-column>
@@ -177,10 +177,11 @@ export class NbReactiveFormSelectComponent {
   `,
 })
 export class NbNgModelSelectComponent {
-  options: number[] = [1];
-  selectedValue: number = null;
+  @Input() multiple: boolean = false;
+  @Input() options: number[] = [1];
+  @Input() selectedValue: number | number[] = null;
 
-  @ViewChild(NbOptionComponent) optionComponent: NbOptionComponent<number>;
+  @ViewChildren(NbOptionComponent) optionComponents: QueryList<NbOptionComponent<number>>;
 }
 
 @Component({
@@ -558,7 +559,7 @@ describe('Component: NbSelectComponent', () => {
     const testComponent = selectFixture.componentInstance;
     selectFixture.detectChanges();
 
-    const optionToSelect = testComponent.optionComponent;
+    const optionToSelect = testComponent.optionComponents.first;
     const optionSelectSpy = spyOn(optionToSelect, 'select').and.callThrough();
 
     expect(optionToSelect.selected).toEqual(false);
@@ -572,6 +573,46 @@ describe('Component: NbSelectComponent', () => {
 
     expect(optionToSelect.selected).toEqual(true);
     expect(optionSelectSpy).toHaveBeenCalledTimes(1);
+  }));
+
+  it('should multiple select option set through ngModel binding', fakeAsync(() => {
+    const selectFixture = TestBed.createComponent(NbNgModelSelectComponent);
+    const testComponent = selectFixture.componentInstance;
+    testComponent.multiple = true;
+    testComponent.options = [1, 2];
+    testComponent.selectedValue = [1, 2];
+
+    selectFixture.detectChanges();
+    // need to call flush because NgModelDirective updates value on
+    // resolvedPromise.then
+    flush();
+    selectFixture.detectChanges();
+
+    const optionToSelect1 = testComponent.optionComponents.first;
+    const optionToSelect2 = testComponent.optionComponents.last;
+    const optionSelectSpy1 = spyOn(optionToSelect1, 'select').and.callThrough();
+    const optionSelectSpy2 = spyOn(optionToSelect2, 'select').and.callThrough();
+
+    expect(optionToSelect1.selected).toEqual(true);
+    expect(optionToSelect2.selected).toEqual(true);
+
+    testComponent.selectedValue = [optionToSelect1.value];
+    selectFixture.detectChanges();
+    flush();
+    selectFixture.detectChanges();
+
+    expect(optionToSelect1.selected).toEqual(true);
+    expect(optionToSelect2.selected).toEqual(false);
+
+    testComponent.selectedValue = [];
+    selectFixture.detectChanges();
+    flush();
+    selectFixture.detectChanges();
+
+    expect(optionToSelect1.selected).toEqual(false);
+    expect(optionToSelect2.selected).toEqual(false);
+    expect(optionSelectSpy1).toHaveBeenCalledTimes(1);
+    expect(optionSelectSpy2).toHaveBeenCalledTimes(0);
   }));
 
   it('should unselect previously selected option', fakeAsync(() => {
