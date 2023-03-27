@@ -33,6 +33,7 @@
     "build:packages-sass": "sass dist/auth/styles/prebuilt dist/theme/styles/prebuilt --load-path=node_modules --style=compressed --no-source-map",
     "build:dev-schematics": "gulp build-development-schematics",
     "test": "ng test",
+    "test:theme": "ng test theme --code-coverage --watch=false",
     "test:packages": "npm-run-all \"test theme -- --code-coverage --watch=false\" test:schematics \"test auth -- --code-coverage --watch=false\" \"test moment -- --code-coverage --watch=false\" \"test security -- --code-coverage --watch=false\" \"test date-fns -- --code-coverage --watch=false\" \"test firebase-auth -- --code-coverage --watch=false\" \"test eva-icons -- --code-coverage --watch=false\"",
     "test:wp": "ng test --configuration=production-wp",
     "test:coverage": "rimraf coverage && ng test playground --code-coverage --watch=false",
